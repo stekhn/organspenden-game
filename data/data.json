@@ -17,6 +17,8 @@
 		"lung": 2
 	},
 
+    "illPersons": 7654,
+
 	"minHealth" : 50,
 	"maxHealth": 100,
 

@@ -8,6 +8,8 @@
 
             $scope.data = data;
 
+            $scope.illCounter = $scope.data.illPersons;
+
         });
 
         $scope.onDrop = function (target, source) {

@@ -94,11 +94,24 @@
             </main>
             <aside class="result-content">
 
-                <p class="saved"><span>{{savedCounter}}</span>wurden gerettet</p>
+                <div class="saved">
+                    <p class="counter">{{savedCounter}}</p>
 
-                <p class="dead"><span>{{diedCounter}}</span>sind leider gestorben</p>
+                    <p class="text">wurden gerettet</p>
+                </div>
 
-                <p class="ill"><span>{{illCounter}}</span>sind derzeit krank</p>
+                <div class="dead">
+                    <p class="counter">{{diedCounter}}</p>
+
+                    <p class="text">sind leider gestorben</p>
+                </div>
+
+
+                <div class="ill">
+                    <p class="counter">{{illCounter}}</p>
+
+                    <p class="text">stehen derzeit auf der Warteliste</p>
+                </div>
             </aside>
         </div>
 
