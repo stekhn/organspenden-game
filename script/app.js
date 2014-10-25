@@ -56,8 +56,7 @@
                     "saved": false,
                     "index": i,
                     "type": organ,
-                    "health": Math.floor(Math.random() * ($scope.data.maxHealth - $scope.data.minHealth) + $scope.data.minHealth),
-                    "chances": Math.floor(Math.random() * ($scope.data.maxChances - $scope.data.minChances) + $scope.data.minChances)
+                    "health": Math.floor(Math.random() * ($scope.data.maxHealth - $scope.data.minHealth) + $scope.data.minHealth)
                 });
             }
         }
@@ -82,8 +81,8 @@
 
         var patients = $('.patient-health');
         $.each(patients, function(key, value) {
-            console.log(key);
-        })
+            console.log(patients[key]);
+        });
     }
 
     function decreaseHealth($scope) {
