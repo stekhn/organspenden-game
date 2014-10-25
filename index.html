@@ -70,7 +70,7 @@
 
 
                     <div class="patient" drop-channel="A" ui-on-drop="onDrop(patient, $data)"
-                         ng-repeat="patient in patients | orderBy:'health'" on-finish-render="done">
+                         ng-repeat="patient in patients" on-finish-render="done">
 
                         <div ng-switch on="patient.saved">
                             <img ng-switch-when="false" class="patient-picture"
@@ -85,7 +85,8 @@
                             <div>{{patient.organ}}</div>
                             <div class="indicator patient-health">
                                 <div class="bar" style="width: {{patient.health}}%;"></div>
-                                <div class="text">{{patient.health}}</div>
+                                <div class="text" ng-hide="patient.dead">{{patient.health}}</div>
+                                <div ng-show="patient.dead">Tot.</div>
                             </div>
                         </div>
                     </div>
