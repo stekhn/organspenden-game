@@ -20,15 +20,14 @@
                 $scope.organs[source.index].unused = false;
                 target.saved = true;
                 $scope.savedCounter++;
+                console.log(target);
             }
-
-            console.log(source.index);
         };
 
         $scope.savedCounter = 0;
         $scope.getNumber = function(num) {
             return new Array($scope.savedCounter);
-        }
+        };
 
     }]);
 
@@ -89,9 +88,7 @@
 
     function healthCounter($scope) {
 
-        var patients = $('.patient-health');
-
-        $.each(patients, function(key, value) {
+        $.each($scope.patients, function(key, value) {
 
             var start = new Date();
             var maxTime = Math.floor(Math.random() * (($scope.data.maxSpeed - $scope.data.minSpeed) + $scope.data.minSpeed));
@@ -100,12 +97,13 @@
 
             function updateProgress() {
 
-                var value = parseInt(patients[key].children[0].style.width.replace("%", ""));
-                value--;
+                if ($scope.patients[key].health > 0 && !$scope.patients[key].saved) {
+                    --$scope.patients[key].health;
+                    $scope.$apply();
+                }
 
-                if (value >= 0) {
-                    patients[key].children[0].style.width = value + "%";
-                    patients[key].children[1].innerHTML = value;
+                if ($scope.patients[key].health <= 0) {
+                    $scope.patients[key].dead = true;
                 }
             }
 
