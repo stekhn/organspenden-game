@@ -21,6 +21,8 @@
                 target.saved = true;
                 $scope.savedCounter++;
             }
+
+            console.log(source.index);
         };
 
         $scope.savedCounter = 0;
@@ -89,62 +91,36 @@
 
         var patients = $('.patient-health');
 
-        $.each(patients, function (key, value) {
-            //decreaseHealth(patients[key].children[1].style.width, patients[key].children[1].innerHTML);
+        $.each(patients, function(key, value) {
+
             var start = new Date();
-            var maxTime = 360;
+            var maxTime = Math.floor(Math.random() * (($scope.data.maxSpeed - $scope.data.minSpeed) + $scope.data.minSpeed));
 
             animateUpdate();
 
             function updateProgress() {
 
                 var value = parseInt(patients[key].children[0].style.width.replace("%", ""));
-                patients[key].children[0].style.width = --value + "%";
-                patients[key].children[1].innerHTML = --value + "%";
+                value--;
+
+                if (value >= 0) {
+                    patients[key].children[0].style.width = value + "%";
+                    patients[key].children[1].innerHTML = value;
+                }
             }
 
             function animateUpdate() {
 
                 var now = new Date();
                 var timeDiff = now.getTime() - start.getTime();
-                var time = Math.round((timeDiff / maxTime));
+                var time = Math.round((timeDiff/maxTime));
 
-                if (time <= 100) {
+                if (time >= 0) {
                     updateProgress();
                     setTimeout(animateUpdate, maxTime);
                 }
             }
         });
     }
-
-    function decreaseHealth(bar, text) {
-
-        var start = new Date();
-        var maxTime = 36000;
-        var timeoutVal = Math.floor(maxTime / 100);
-
-        animateUpdate();
-
-        function updateProgress(percentage) {
-
-            bar = parseInt(bar) + 10;
-
-            // $('.patient-health .bar').css("width", percentage + "%");
-            // $('.patient-health .text').text(percentage + "%");
-        }
-
-        function animateUpdate() {
-
-            var now = new Date();
-            var timeDiff = now.getTime() - start.getTime();
-            var perc = Math.round((timeDiff / maxTime) * 100);
-
-            if (perc <= 100) {
-                updateProgress(perc);
-                setTimeout(animateUpdate, timeoutVal);
-            }
-        }
-    }
-
 
 }());

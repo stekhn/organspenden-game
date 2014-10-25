@@ -18,6 +18,9 @@
 	"minHealth" : 50,
 	"maxHealth": 100,
 
+	"minSpeed": 182,
+	"maxSpeed": 365,
+
 	"factor": 365
 }
 
