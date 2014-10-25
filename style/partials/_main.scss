@@ -16,16 +16,21 @@ aside {
 
 main {
   flex: 3 0px;
-  background: indianred;
+  overflow: auto;
+  background: #ffffff;
 }
 
 .patient {
-  width: 200px;
-  background: #ffffff;
+  width: 150px;
   display: inline-block;
   margin: 1em 1em 1em 0;
 
-  img{
+  img {
     width: 100%;
   }
+}
+
+.organ {
+  margin: 0.2em;
+  background: #ffffff;
 }

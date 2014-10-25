@@ -10,8 +10,18 @@
 
         <link rel="stylesheet" type="text/css" href="style/main.css">
 
-        <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
-        <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+
+        <!--<script type="text/javascript" src="vendor/angular/angular.min.js"></script>-->
+        <!--<script type="text/javascript" src="vendor/angular/angular-dragdrop.min.js"></script>-->
+        <!--<script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>-->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <script src="vendor/angular/angular-dragdrop.min.js"></script>
+
         <script type="text/javascript" src="script/app.js"></script>
 
     </head>
@@ -26,7 +36,15 @@
             <aside>
                 <h1>{{data.applicationName}}</h1>
                 <section class="organs">
-                    <div class="organ" ng-repeat="organ in organs">{{organ.type}}</div>
+                    <!--<div class="organ"-->
+                         <!--data-drag="true"-->
+                         <!--data-jqyoui-options="{revert: 'invalid'}"-->
+                         <!--ng-repeat="organ in organs">{{organ.type}}</div>-->
+
+                    <div class="btn btn-droppable" ng-repeat="organ in organs" data-drop="true" ng-model='list5' data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list5])'}"  jqyoui-droppable="{index: {{$index}}}">
+                        <div class="btn btn-info btn-draggable" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="organs" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">{{organ.type}}</div>
+                    </div>
+
                 </section>
                 <section class="campaign">
                     <div class="campaign-progress"></div>
@@ -38,13 +56,13 @@
                 <section class="patients">
                     <div class="patient" ng-repeat="patient in patients | orderBy:'health'" >
 
-                        <img class="patient-picture" src="img/patient"
+                        <img class="patient-picture" src="img/person-lebendig.svg"
                              alt="This picture loads on non-supporting browsers."/>
                         <img class="patient-organ" src=""/>
 
                         <div class="patient-status">
                             <div>{{patient.organ}}</div>
-                            <div class="patient-health">{{patient.health}}</div>
+                            <div class="patient-health" >{{patient.health}}</div>
                             <div class="patient-chances">{{patient.chances}}</div>
                         </div>
                     </div>

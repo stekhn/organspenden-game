@@ -1,47 +1,47 @@
-(function() {
+(function () {
 
-	var app = angular.module('app', []);
+    var app = angular.module('app', ['ngDragDrop']);
 
-	app.controller('JsonLoaderCtrl', ['$scope', '$http', function ($scope, $http) {
+    app.controller('JsonLoaderCtrl', ['$scope', '$http', function ($scope, $http) {
 
-		$http.get('data/data.json').success(function (data) {
+        $http.get('data/data.json').success(function (data) {
 
-			$scope.data = data;
+            $scope.data = data;
 
-			generatePatients($scope);
-			generateOrgans($scope);
-		});
+            generatePatients($scope);
+            generateOrgans($scope);
+        });
 
-	}]);
+    }]);
 
-	function generatePatients($scope) {
+    function generatePatients($scope) {
 
-		$scope.patients = [];
+        $scope.patients = [];
 
-		for (var organ in $scope.data.patients) {
-			for (var i = 0; i < $scope.data.patients[organ]; i++) {
-				$scope.patients.push({
-					"type": organ,
-					"health": Math.floor(Math.random() * ($scope.data.maxHealth - $scope.data.minHealth) + $scope.data.minHealth),
-					"chances": Math.floor(Math.random() * ($scope.data.maxChances - $scope.data.minChances) + $scope.data.minChances)
-				});
-			}
-		}
-	}
+        for (var organ in $scope.data.patients) {
+            for (var i = 0; i < $scope.data.patients[organ]; i++) {
+                $scope.patients.push({
+                    "type": organ,
+                    "health": Math.floor(Math.random() * ($scope.data.maxHealth - $scope.data.minHealth) + $scope.data.minHealth),
+                    "chances": Math.floor(Math.random() * ($scope.data.maxChances - $scope.data.minChances) + $scope.data.minChances)
+                });
+            }
+        }
+    }
 
-	function generateOrgans($scope) {
+    function generateOrgans($scope) {
 
-		$scope.organs = [];
+        $scope.organs = [];
 
-		for (var organ in $scope.data.donors) {
-			for (var i = 0; i < $scope.data.donors[organ]; i++) {
-				console.log(organ);
-				$scope.organs.push({
-					"type": organ,
-				});
-			}
-		}
-	}
+        for (var organ in $scope.data.donors) {
+            for (var i = 0; i < $scope.data.donors[organ]; i++) {
+                console.log(organ);
+                $scope.organs.push({
+                    "type": organ,
+                });
+            }
+        }
+    }
 
-	
+
 }());
