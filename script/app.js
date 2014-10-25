@@ -14,14 +14,12 @@
 
         $scope.onDrop = function (target, source) {
 
+
+            console.log(target);
             if (target.type === source.type) {
 
-
-                $scope.organs[source.index].unused = false;
                 target.saved = true;
             }
-
-            console.log(source.index);
         };
 
     }]);
@@ -67,16 +65,13 @@
 
         $scope.organs = [];
 
-        var counter = 0;
         for (var organ in $scope.data.donors) {
             for (var i = 0; i < $scope.data.donors[organ]; i++) {
 
                 $scope.organs.push({
-                    "unused": true,
                     "type": organ,
-                    "index": counter
+                    "index": i
                 });
-                counter++;
             }
         }
     }
@@ -105,42 +100,12 @@
                 var timeDiff = now.getTime() - start.getTime();
                 var time = Math.round((timeDiff/maxTime));
 
-                if (time <= 100) {
-                    updateProgress();
-                    setTimeout(animateUpdate, maxTime);
-                }
+            if (time <= 100) {
+                updateProgress();
+                setTimeout(animateUpdate, maxTime);
+            }
             }
         });
     }
-
-    function decreaseHealth(bar, text) {
-
-        var start = new Date();
-        var maxTime = 36000;
-        var timeoutVal = Math.floor(maxTime/100);
-
-        animateUpdate();
-
-        function updateProgress(percentage) {
-
-            bar = parseInt(bar) + 10;
-
-            // $('.patient-health .bar').css("width", percentage + "%");
-            // $('.patient-health .text').text(percentage + "%");
-        }
-
-        function animateUpdate() {
-
-            var now = new Date();
-            var timeDiff = now.getTime() - start.getTime();
-            var perc = Math.round((timeDiff/maxTime)*100);
-
-              if (perc <= 100) {
-               updateProgress(perc);
-               setTimeout(animateUpdate, timeoutVal);
-              }
-        }
-    }
-
 
 }());
