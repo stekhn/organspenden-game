@@ -11,27 +11,9 @@ body {
   height: 100%;
 }
 
-
-.fixed-red-bg {
-  background: #880000;
-  border: solid 2px;
-  height: 3em;
-  width: 3em;
-  cursor: pointer;
-}
-
-.fixed-green-bg {
-  background: #008800;
-  border: solid 2px;
-  height: 3em;
-  width: 3em;
-  cursor: pointer;
-}
-
-.fixed-blue-bg {
-  background: #000088;
-  border: solid 2px;
-  height: 3em;
-  width: 3em;
-  cursor: pointer;
+h1{
+  text-align: center;
+  margin: 1.2em;
+  color: #333;
+  font-size: 1.6em;
 }

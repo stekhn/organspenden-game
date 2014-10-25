@@ -4,15 +4,15 @@
 	"applicationName": "Organspenden Newsgame",
 
 	"donors": {
-		"livers": 2,
-		"hearts": 4,
-		"lungs": 1
+		"liver": 2,
+		"heart": 4,
+		"lung": 1
 	},
 
 	"patients": {
-		"livers": 4,
-		"hearts": 6,
-		"lungs": 2 
+		"liver": 4,
+		"heart": 6,
+		"lung": 2
 	},
 
 	"minHealth" : 50,

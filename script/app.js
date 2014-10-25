@@ -14,12 +14,14 @@
 
         $scope.onDrop = function (target, source) {
 
-
-            console.log(target);
             if (target.type === source.type) {
 
+
+                $scope.organs[source.index].unused = false;
                 target.saved = true;
             }
+
+            console.log(source.index);
         };
 
     }]);
@@ -65,13 +67,16 @@
 
         $scope.organs = [];
 
+        var counter = 0;
         for (var organ in $scope.data.donors) {
             for (var i = 0; i < $scope.data.donors[organ]; i++) {
 
                 $scope.organs.push({
+                    "unused": true,
                     "type": organ,
-                    "index": i
+                    "index": counter
                 });
+                counter++;
             }
         }
     }
@@ -125,7 +130,7 @@
         }
 
         function animateUpdate() {
-            
+
             var now = new Date();
             var timeDiff = now.getTime() - start.getTime();
             var perc = Math.round((timeDiff/maxTime)*100);

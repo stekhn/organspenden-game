@@ -9,10 +9,18 @@
 }
 
 aside {
-  background: gold;
-  width: 300px;
+  width: 200px;
   flex: 0 auto;
 }
+
+.organ-list {
+  border-right: 1px solid #ccc;
+}
+
+.result-content {
+  border-left: 1px solid #ccc;
+}
+
 
 main {
   flex: 3 0px;
@@ -21,9 +29,9 @@ main {
 }
 
 .patient {
-  width: 150px;
+  width: 60px;
   display: inline-block;
-  margin: 1em 1em 1em 0;
+  margin: 1em 3em 1em 0;
 
   img {
     width: 100%;
@@ -45,7 +53,7 @@ main {
     background-color: lightblue;
     z-index: 2;
     height: 100%;
-    }
+  }
 
   .text {
     z-index: 3;
@@ -58,3 +66,6 @@ main {
   }
 }
 
+.organ-picture {
+  width: 50px;
+}
