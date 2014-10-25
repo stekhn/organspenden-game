@@ -36,15 +36,16 @@
 
             <main>
                 <section class="patients">
-                    <div class="patient" ng-repeat="(key, value) in dataset">
+                    <div class="patient" ng-repeat="patient in patients">
 
                         <img class="patient-picture" src="img/patient"
                              alt="This picture loads on non-supporting browsers."/>
                         <img class="patient-organ" src=""/>
 
                         <div class="patient-status">
-                            <div class="patient-health"></div>
-                            <div class="patient-chances"></div>
+                            <div>{{patient.organ}}</div>
+                            <div class="patient-health">{{patient.health}}</div>
+                            <div class="patient-chances">{{patient.chances}}</div>
                         </div>
                     </div>
                 </section>
