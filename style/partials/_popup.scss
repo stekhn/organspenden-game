@@ -18,7 +18,7 @@
   width: 500px;
   height: 500px;
   border-radius: 500px;
-  margin: 0 auto;
+  margin: 2em auto;
   padding: 100px;
 
   background: #888;
@@ -41,5 +41,26 @@
       cursor: pointer;
     }
 
+  }
+  position: relative;
+}
+
+.start-organ{
+  position: absolute;
+  width: 100px;
+
+  &.heart{
+    top: 300px;
+    left: -25px;
+  }
+
+  &.liver{
+    top: 400px;
+    left: 40px;
+  }
+
+  &.lung{
+    top: 450px;
+    left: 150px;
   }
 }

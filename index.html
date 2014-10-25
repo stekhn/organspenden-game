@@ -32,13 +32,20 @@
                     totam. Consectetur eum nemo quas.</p>
 
                 <div id="startbtn" ng-click="startGame()"><img src="img/start.svg" alt=""/></div>
+
+                <div>
+                    <img ng-repeat="organ in data.organs" src="img/organ/{{organ}}.svg" class="{{organ}} start-organ"
+                         alt="This picture loads on non-supporting browsers."/>
+                </div>
             </div>
+
+
         </section>
 
         <section class="results popup"></section>
         <section class="event popup"></section>
 
-        <header><h1>{{data.applicationName}}</h1></header>
+        <header><h2>{{data.applicationName}}</h2></header>
         <div class="wrapper">
             <aside class="organ-list">
 

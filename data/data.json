@@ -3,6 +3,8 @@
 
 	"applicationName": "Organspenden Newsgame",
 
+    "organs": ["liver", "heart", "lung"],
+
 	"donors": {
 		"liver": 2,
 		"heart": 4,
