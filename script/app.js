@@ -18,7 +18,7 @@
 
 
                 $scope.organs[source.index].unused = false;
-                target.saved = true;
+                target.status = "saved";
                 $scope.savedCounter++;
                 console.log(target);
             }
@@ -75,7 +75,7 @@
         for (var organ in $scope.data.patients) {
             for (var i = 0; i < $scope.data.patients[organ]; i++) {
                 $scope.patients.push({
-                    "saved": false,
+                    "status": "alive",
                     "index": i,
                     "type": organ,
                     "health": Math.floor(Math.random() * ($scope.data.maxHealth - $scope.data.minHealth) + $scope.data.minHealth)
@@ -113,13 +113,13 @@
 
             function updateProgress() {
 
-                if ($scope.patients[key].health > 0 && !$scope.patients[key].saved) {
+                if ($scope.patients[key].health > 0 && $scope.patients[key].status === "alive") {
                     --$scope.patients[key].health;
                     $scope.$apply();
                 }
 
                 if ($scope.patients[key].health <= 0) {
-                    $scope.patients[key].dead = true;
+                    $scope.patients[key].status = "dead";
                 }
             }
 
