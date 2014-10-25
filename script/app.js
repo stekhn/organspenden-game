@@ -2,14 +2,14 @@
 
     var app = angular.module('app', ['ngDragDrop']);
 
-    app.controller('JsonLoaderCtrl', ['$scope', '$http', function ($scope, $http) {
+    app.controller('JsonLoaderCtrl', ['$scope', '$http', '$timeout', function ($scope, $http, $timeout) {
 
         $http.get('data/data.json').success(function (data) {
 
             $scope.data = data;
 
-            generatePatients($scope);
-            generateOrgans($scope);
+            $scope.illCounter = $scope.data.illPersons;
+
         });
 
         $scope.onDrop = function (target, source) {
@@ -22,20 +22,36 @@
                 $scope.savedCounter++;
                 console.log(target);
             }
+
+            console.log(source.index);
+        };
+
+        $scope.started = false;
+
+        $scope.startGame = function () {
+
+            $scope.started = true;
+            generatePatients($scope);
+            generateOrgans($scope);
         };
 
         $scope.savedCounter = 0;
-        $scope.getNumber = function(num) {
+        $scope.diedCounter = 0;
+        $scope.illCounter = 0;
+        $scope.getNumber = function (num) {
             return new Array($scope.savedCounter);
         };
 
     }]);
 
-    app.controller('RenderController', ['$scope', function ($scope) {
+    app.controller('RenderController', ['$scope', '$timeout', function ($scope, $timeout) {
 
         $scope.$on('done', function (ngRepeatFinishedEvent) {
 
-            healthCounter($scope);
+            $timeout(function(){
+                healthCounter($scope);
+            }, 1000)
+
         });
     }]);
 
@@ -111,7 +127,7 @@
 
                 var now = new Date();
                 var timeDiff = now.getTime() - start.getTime();
-                var time = Math.round((timeDiff/maxTime));
+                var time = Math.round((timeDiff / maxTime));
 
                 if (time >= 0) {
                     updateProgress();

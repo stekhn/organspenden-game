@@ -3,6 +3,8 @@
 
 	"applicationName": "Organspenden Newsgame",
 
+    "organs": ["liver", "heart", "lung"],
+
 	"donors": {
 		"liver": 2,
 		"heart": 4,
@@ -14,6 +16,8 @@
 		"heart": 6,
 		"lung": 2
 	},
+
+    "illPersons": 7654,
 
 	"minHealth" : 50,
 	"maxHealth": 100,

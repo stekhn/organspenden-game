@@ -1,0 +1,73 @@
+#welcome {
+
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  background: #ffffff;
+}
+
+#startbtn {
+  margin-top: 1em;
+  text-align: right;
+  img {
+    width: 100px;
+    cursor: pointer;
+  }
+
+}
+
+.circle {
+  color: #ffffff;
+  width: 500px;
+  height: 500px;
+  border-radius: 500px;
+  margin: 2em auto;
+  padding: 100px;
+
+  background: #888;
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.4em;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.4em;
+  }
+
+
+  position: relative;
+}
+
+.start-organ{
+  position: absolute;
+  width: 100px;
+
+  &.heart{
+    top: 300px;
+    left: -25px;
+  }
+
+  &.liver{
+    top: 400px;
+    left: 40px;
+  }
+
+  &.lung{
+    top: 450px;
+    left: 150px;
+  }
+}
+
+
+.description{
+  text-align: center;
+  color: #888;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  margin: 5em 0 0 0;
+}
