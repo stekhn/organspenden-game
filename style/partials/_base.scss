@@ -2,18 +2,20 @@ html {
   box-sizing: border-box;
   height: 100%;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
 
 body {
   height: 100%;
 }
 
-h1{
+h1 {
   text-align: center;
-  margin: 1.2em;
+  padding: 1em;
+  margin-bottom: 1em;
   color: #333;
+  background: #ccc;
   font-size: 1.6em;
 }
