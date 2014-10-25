@@ -19,16 +19,20 @@
 
                 $scope.organs[source.index].unused = false;
                 target.saved = true;
+                $scope.savedCounter++;
             }
-
-            console.log(source.index);
         };
+
+        $scope.savedCounter = 0;
+        $scope.getNumber = function(num) {
+            return new Array($scope.savedCounter);
+        }
 
     }]);
 
     app.controller('RenderController', ['$scope', function ($scope) {
 
-        $scope.$on('done', function(ngRepeatFinishedEvent) {
+        $scope.$on('done', function (ngRepeatFinishedEvent) {
 
             healthCounter($scope);
         });
@@ -85,7 +89,7 @@
 
         var patients = $('.patient-health');
 
-        $.each(patients, function(key, value) {
+        $.each(patients, function (key, value) {
             //decreaseHealth(patients[key].children[1].style.width, patients[key].children[1].innerHTML);
             var start = new Date();
             var maxTime = 360;
@@ -100,10 +104,10 @@
             }
 
             function animateUpdate() {
-                
+
                 var now = new Date();
                 var timeDiff = now.getTime() - start.getTime();
-                var time = Math.round((timeDiff/maxTime));
+                var time = Math.round((timeDiff / maxTime));
 
                 if (time <= 100) {
                     updateProgress();
@@ -117,7 +121,7 @@
 
         var start = new Date();
         var maxTime = 36000;
-        var timeoutVal = Math.floor(maxTime/100);
+        var timeoutVal = Math.floor(maxTime / 100);
 
         animateUpdate();
 
@@ -133,12 +137,12 @@
 
             var now = new Date();
             var timeDiff = now.getTime() - start.getTime();
-            var perc = Math.round((timeDiff/maxTime)*100);
+            var perc = Math.round((timeDiff / maxTime) * 100);
 
-              if (perc <= 100) {
-               updateProgress(perc);
-               setTimeout(animateUpdate, timeoutVal);
-              }
+            if (perc <= 100) {
+                updateProgress(perc);
+                setTimeout(animateUpdate, timeoutVal);
+            }
         }
     }
 
