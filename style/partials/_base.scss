@@ -1,19 +1,12 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
 body {
-
+  height: 100%;
 }
-
-.loading {
-	position: relative;
-	z-index: 100;
-	height: 20em;
-
-	img {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin: -32px 0 0 -32px;
-		width: 64px;
-		height: 64px;		
-	}
-}
-

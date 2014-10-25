@@ -13,43 +13,47 @@
         <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
         <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="script/app.js"></script>
-        
+
     </head>
 
     <body ng-controller="JsonLoaderCtrl">
 
-    <section class="welcome popup"></section>
-    <section class="results popup"></section>
-    <section class="event popup"></section>
+        <section class="welcome popup"></section>
+        <section class="results popup"></section>
+        <section class="event popup"></section>
 
-    <aside>
-        <h1>{{data.applicationName}}</h1>
-        <section class="organs">
-            <div class="organ" ng-repeat="(key, value) in dataset"></div>
-        </section>
-        <section class="campaign">
-            <div class="campaign-progress"></div>
-            <button class="start-campaign"></button>
-        </section>        
-    </aside>
+        <div class="wrapper">
+            <aside>
+                <h1>{{data.applicationName}}</h1>
+                <section class="organs">
+                    <div class="organ" ng-repeat="(key, value) in dataset"></div>
+                </section>
+                <section class="campaign">
+                    <div class="campaign-progress"></div>
+                    <button class="start-campaign"></button>
+                </section>
+            </aside>
 
-    <main>
-        <section class="patients">
-            <div class="patient" ng-repeat="(key, value) in dataset">
+            <main>
+                <section class="patients">
+                    <div class="patient" ng-repeat="(key, value) in dataset">
 
-                <img class="patient-picture" src="img/patient" alt="This picture loads on non-supporting browsers."/>
-                <img class="patient-organ" src=""/>
-                <div class="patient-status">
-                    <div class="patient-health"></div>
-                    <div class="patient-chances"></div>
-                </div>
-            </div>
-        </section>
-        <section class="status"></section>
-    </main>
-    
-    <section class="loading"> </section>
-   
+                        <img class="patient-picture" src="img/patient"
+                             alt="This picture loads on non-supporting browsers."/>
+                        <img class="patient-organ" src=""/>
+
+                        <div class="patient-status">
+                            <div class="patient-health"></div>
+                            <div class="patient-chances"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="status"></section>
+            </main>
+        </div>
+
+        <section class="loading"></section>
+
     </body>
 
 </html>
