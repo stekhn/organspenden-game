@@ -14,12 +14,14 @@
 
         $scope.onDrop = function (target, source) {
 
-
-            console.log(target);
             if (target.type === source.type) {
 
+
+                $scope.organs[source.index].unused = false;
                 target.saved = true;
             }
+
+            console.log(source.index);
         };
 
     }]);
@@ -66,13 +68,16 @@
 
         $scope.organs = [];
 
+        var counter = 0;
         for (var organ in $scope.data.donors) {
             for (var i = 0; i < $scope.data.donors[organ]; i++) {
-                console.log(organ);
+
                 $scope.organs.push({
+                    "unused": true,
                     "type": organ,
-                    "index": i
+                    "index": counter
                 });
+                counter++;
             }
         }
     }
@@ -81,7 +86,7 @@
 
         var patients = $('.patient-health');
         $.each(patients, function(key, value) {
-            console.log(patients[key]);
+            //console.log(patients[key]);
         });
     }
 

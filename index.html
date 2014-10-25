@@ -11,11 +11,11 @@
         <link rel="stylesheet" type="text/css" href="style/main.css">
 
 
-        <!--<script type="text/javascript" src="vendor/angular/angular.min.js"></script>-->
+        <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
         <!--<script type="text/javascript" src="vendor/angular/angular-dragdrop.min.js"></script>-->
         <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
 
-        <script data-require="angular.js@1.1.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js" data-semver="1.1.5"></script>
+        <!--<script data-require="angular.js@1.1.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js" data-semver="1.1.5"></script>-->
 
         <script src="vendor/angular/angular-dragdrop.min.js"></script>
 
@@ -29,24 +29,16 @@
         <section class="results popup"></section>
         <section class="event popup"></section>
 
+        <header><h1>{{data.applicationName}}</h1></header>
         <div class="wrapper">
-            <aside>
-                <h1>{{data.applicationName}}</h1>
+            <aside class="organ-list">
+
                 <section class="organs">
 
-                    <!--<div class="container">-->
-                        <!--<div class="fixed-red-bg" ui-draggable="true" drag="1" drag-channel="A" drop-channel="A" ui-on-drop="onDrop(1, $data)" drop-validate="dropValidate(1, $data)">-->
-                        <!--</div>-->
-                        <!--&nbsp;-->
-                        <!--<div class="fixed-green-bg" ui-draggable="true" drag="2" drag-channel="A" drop-channel="A" ui-on-drop="onDrop(2, $data)" drop-validate="dropValidate(2, $data)">-->
-                        <!--</div>-->
-                        <!--&nbsp;-->
-                        <!--<div class="fixed-blue-bg" ui-draggable="true" drag="3" drag-channel="A" drop-channel="A" ui-on-drop="onDrop(3, $data)" drop-validate="dropValidate(3, $data)">-->
-                        <!--</div>-->
-                    <!--</div>-->
-
-                    <div ng-repeat="organ in organs"  ui-draggable="true" drag="{{organ}}" drag-channel="A"  >
-                        <p>{{organ.type}}</p>
+                    <div ng-repeat="organ in organs" ui-draggable="true" drag="{{organ}}" drag-channel="A"
+                         ng-show="organ.unused">
+                        <img class="organ-picture" src="img/organ/{{organ.type}}.svg"
+                             alt="This picture loads on non-supporting browsers."/>
                     </div>
 
                 </section>
@@ -60,13 +52,15 @@
                 <section class="patients" ng-controller="RenderController">
 
 
-                    <div class="patient" drop-channel="A" ui-on-drop="onDrop(patient, $data)" ng-repeat="patient in patients | orderBy:'health'" on-finish-render="done">
+                    <div class="patient" drop-channel="A" ui-on-drop="onDrop(patient, $data)"
+                         ng-repeat="patient in patients | orderBy:'health'" on-finish-render="done">
 
                         <div ng-switch on="patient.saved">
-                            <img ng-switch-when="false" class="patient-picture" src="img/person-rot-{{patient.type}}.svg"
-                                 alt="This picture loads on non-supporting browsers." />
+                            <img ng-switch-when="false" class="patient-picture"
+                                 src="img/person-rot-{{patient.type}}.svg"
+                                 alt="This picture loads on non-supporting browsers."/>
                             <img ng-switch-when="true" class="patient-picture" src="img/person-lebendig.svg"
-                                 alt="This picture loads on non-supporting browsers." ng-show="patient.saved" />
+                                 alt="This picture loads on non-supporting browsers." ng-show="patient.saved"/>
                         </div>
 
 
@@ -76,13 +70,14 @@
                                 <div class="bar" style="width: {{patient.health}}%;"></div>
                                 <div class="text">{{patient.health}}</div>
                             </div>
-                            <div class="patient-chances">{{patient.type}}</div>
-                            <div class="patient-chances">{{patient.saved}}</div>
                         </div>
                     </div>
                 </section>
                 <section class="status"></section>
             </main>
+            <aside class="result-content">
+
+            </aside>
         </div>
 
         <section class="loading"></section>
