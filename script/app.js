@@ -85,29 +85,34 @@
     function healthCounter($scope) {
 
         var patients = $('.patient-health');
+
         $.each(patients, function(key, value) {
-            //console.log(patients[key]);
+            decreaseHealth(patients[key].children[1].style.width, patients[key].children[1].innerHTML);
         });
     }
 
-    function decreaseHealth($scope) {
+    function decreaseHealth(bar, text) {
 
         var start = new Date();
         var maxTime = 36000;
         var timeoutVal = Math.floor(maxTime/100);
+
         animateUpdate();
 
         function updateProgress(percentage) {
-            console.log($('.patient-health .bar').width());
-            $('.patient-health .bar').css("width", percentage + "%");
-            $('.patient-health .text').text(percentage + "%");
+
+            bar = parseInt(bar) + 10;
+
+            // $('.patient-health .bar').css("width", percentage + "%");
+            // $('.patient-health .text').text(percentage + "%");
         }
 
         function animateUpdate() {
+
             var now = new Date();
             var timeDiff = now.getTime() - start.getTime();
             var perc = Math.round((timeDiff/maxTime)*100);
-            console.log(perc);
+
               if (perc <= 100) {
                updateProgress(perc);
                setTimeout(animateUpdate, timeoutVal);
