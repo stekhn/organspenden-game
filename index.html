@@ -16,9 +16,39 @@
         
     </head>
 
-    <body>
+    <body ng-controller="JsonLoaderCtrl">
 
-        <section class="loading"> 
+    <section class="welcome"></section>
+    <section class="results"></section>
+    <section class="event"></section>
+
+    <aside>
+        <h1>{{data.applicationName}}</h1>
+        <section class="organs">
+            <div class="organ" ng-repeat="(key, value) in dataset"></div>
+        </section>
+        <section class="campaign">
+            <div class="campaign-progress"></div>
+            <button class="start-campaign"></button>
+        </section>        
+    </aside>
+
+    <main>
+        <section class="patients">
+            <div class="patient" ng-repeat="(key, value) in dataset">
+
+                <img class="patient-picture" src="img/patient" alt="This picture loads on non-supporting browsers."/>
+                <img class="patient-organ" src=""/>
+                <div class="patient-status">
+                    <div class="patient-health"></div>
+                    <div class="patient-chances"></div>
+                </div>
+            </div>
+        </section>
+        <section class="status"></section>
+    </main>
+    
+    <section class="loading"> </section>
    
     </body>
 
