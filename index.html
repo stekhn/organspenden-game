@@ -53,12 +53,14 @@
                     <div class="patient" drop-channel="A" ui-on-drop="onDrop(patient, $data)"
                          ng-repeat="patient in patients" on-finish-render="done">
 
-                        <div ng-switch on="patient.saved">
-                            <img ng-switch-when="false" class="patient-picture"
+                        <div ng-switch on="patient.status">
+                            <img ng-switch-when="alive" class="patient-picture"
                                  src="img/person-rot-{{patient.type}}.svg"
                                  alt="This picture loads on non-supporting browsers."/>
-                            <img ng-switch-when="true" class="patient-picture" src="img/person-lebendig.svg"
-                                 alt="This picture loads on non-supporting browsers." ng-show="patient.saved"/>
+                            <img ng-switch-when="saved" class="patient-picture" src="img/person-lebendig.svg"
+                                 alt="This picture loads on non-supporting browsers."/>
+                            <img ng-switch-when="dead" class="patient-picture" src="img/person-tot.svg"
+                                 alt="This picture loads on non-supporting browsers."/>
                         </div>
 
 
@@ -66,8 +68,7 @@
                             <div>{{patient.organ}}</div>
                             <div class="indicator patient-health">
                                 <div class="bar" style="width: {{patient.health}}%;"></div>
-                                <div class="text" ng-hide="patient.dead">{{patient.health}}</div>
-                                <div ng-show="patient.dead">Tot.</div>
+                                <div class="text">{{patient.health}}</div>
                             </div>
                         </div>
                     </div>
