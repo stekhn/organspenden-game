@@ -1,7 +1,20 @@
 
 {
 
-	"applicationName" : "Organspenden Newsgame"
+	"applicationName": "Organspenden Newsgame",
 
+	"donors": {
+		"livers": 2,
+		"hearts": 4,
+		"lungs": 1
+	},
+
+	"patients": {
+		"livers": 4,
+		"hearts": 6,
+		"lungs": 2 
+	},
+
+	"factor": 365
 }
 
