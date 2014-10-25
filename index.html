@@ -15,11 +15,8 @@
         <!--<script type="text/javascript" src="vendor/angular/angular-dragdrop.min.js"></script>-->
         <!--<script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>-->
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
-        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <script data-require="angular.js@1.1.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js" data-semver="1.1.5"></script>
+
         <script src="vendor/angular/angular-dragdrop.min.js"></script>
 
         <script type="text/javascript" src="script/app.js"></script>
@@ -36,13 +33,20 @@
             <aside>
                 <h1>{{data.applicationName}}</h1>
                 <section class="organs">
-                    <!--<div class="organ"-->
-                         <!--data-drag="true"-->
-                         <!--data-jqyoui-options="{revert: 'invalid'}"-->
-                         <!--ng-repeat="organ in organs">{{organ.type}}</div>-->
 
-                    <div class="btn btn-droppable" ng-repeat="organ in organs" data-drop="true" ng-model='list5' data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list5])'}"  jqyoui-droppable="{index: {{$index}}}">
-                        <div class="btn btn-info btn-draggable" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="organs" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">{{organ.type}}</div>
+                    <!--<div class="container">-->
+                        <!--<div class="fixed-red-bg" ui-draggable="true" drag="1" drag-channel="A" drop-channel="A" ui-on-drop="onDrop(1, $data)" drop-validate="dropValidate(1, $data)">-->
+                        <!--</div>-->
+                        <!--&nbsp;-->
+                        <!--<div class="fixed-green-bg" ui-draggable="true" drag="2" drag-channel="A" drop-channel="A" ui-on-drop="onDrop(2, $data)" drop-validate="dropValidate(2, $data)">-->
+                        <!--</div>-->
+                        <!--&nbsp;-->
+                        <!--<div class="fixed-blue-bg" ui-draggable="true" drag="3" drag-channel="A" drop-channel="A" ui-on-drop="onDrop(3, $data)" drop-validate="dropValidate(3, $data)">-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div ng-repeat="organ in organs"  ui-draggable="true" drag="{{organ}}" drag-channel="A"  >
+                        <p>{{organ.type}}</p>
                     </div>
 
                 </section>
@@ -54,7 +58,9 @@
 
             <main>
                 <section class="patients">
-                    <div class="patient" ng-repeat="patient in patients | orderBy:'health'" >
+
+
+                    <div class="patient"  drop-channel="A" ui-on-drop="onDrop(patient, $data)" ng-repeat="patient in patients | orderBy:'health'" >
 
                         <img class="patient-picture" src="img/person-lebendig.svg"
                              alt="This picture loads on non-supporting browsers."/>
@@ -67,6 +73,8 @@
                                 <div class="text">{{patient.health}}</div>
                             </div>
                             <div class="patient-chances">{{patient.chances}}</div>
+                            <div class="patient-chances">{{patient.type}}</div>
+                            <div class="patient-chances">{{patient.saved}}</div>
                         </div>
                     </div>
                 </section>
