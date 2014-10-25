@@ -1,3 +1,26 @@
-[ 
-	{}
-]
+
+{
+
+	"applicationName": "Organspenden Newsgame",
+
+	"donors": {
+		"liver": 2,
+		"heart": 4,
+		"lung": 1
+	},
+
+	"patients": {
+		"liver": 4,
+		"heart": 6,
+		"lung": 2
+	},
+
+	"minHealth" : 50,
+	"maxHealth": 100,
+
+	"minSpeed": 182,
+	"maxSpeed": 365,
+
+	"factor": 365
+}
+
