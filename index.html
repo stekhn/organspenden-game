@@ -73,7 +73,7 @@
 
                         <div ng-switch on="patient.saved">
                             <img ng-switch-when="false" class="patient-picture"
-                                 src="img/person-rot-{{patient.type}}.svg"
+                                 src="img/person-{{patient.type}}.svg"
                                  alt="This picture loads on non-supporting browsers."/>
                             <img ng-switch-when="true" class="patient-picture" src="img/person-lebendig.svg"
                                  alt="This picture loads on non-supporting browsers." ng-show="patient.saved"/>
