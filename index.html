@@ -44,7 +44,10 @@
 
                         <div class="patient-status">
                             <div>{{patient.organ}}</div>
-                            <div class="patient-health">{{patient.health}}</div>
+                            <div class="indicator patient-health">
+                                <div class="bar" style="width: {{patient.health}}%;"></div>
+                                <div class="text">{{patient.health}}</div>
+                            </div>
                             <div class="patient-chances">{{patient.chances}}</div>
                         </div>
                     </div>
