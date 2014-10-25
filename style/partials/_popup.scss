@@ -1,9 +1,5 @@
 #welcome {
 
-  h1 {
-
-  }
-
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -11,6 +7,16 @@
   right: 0px;
 
   background: #ffffff;
+}
+
+#startbtn {
+  margin-top: 1em;
+  text-align: right;
+  img {
+    width: 100px;
+    cursor: pointer;
+  }
+
 }
 
 .circle {
@@ -33,15 +39,7 @@
     line-height: 1.4em;
   }
 
-  #startbtn {
-    margin-top: 1em;
-    text-align: right;
-    img {
-      width: 100px;
-      cursor: pointer;
-    }
 
-  }
   position: relative;
 }
 
@@ -63,4 +61,13 @@
     top: 450px;
     left: 150px;
   }
+}
+
+
+.description{
+  text-align: center;
+  color: #888;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  margin: 5em 0 0 0;
 }
