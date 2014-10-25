@@ -21,6 +21,11 @@ main {
 
 .patient {
   width: 200px;
+  background: #ffffff;
   display: inline-block;
-  margin: 0 1em 1em 0;
+  margin: 1em 1em 1em 0;
+
+  img{
+    width: 100%;
+  }
 }
