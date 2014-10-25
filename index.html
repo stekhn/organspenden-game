@@ -36,7 +36,7 @@
 
             <main>
                 <section class="patients">
-                    <div class="patient" ng-repeat="patient in patients">
+                    <div class="patient" ng-repeat="patient in patients | orderBy:'health'" >
 
                         <img class="patient-picture" src="img/patient"
                              alt="This picture loads on non-supporting browsers."/>
