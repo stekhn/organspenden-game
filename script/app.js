@@ -14,6 +14,14 @@
 
     }]);
 
+    app.controller('RenderController', ['$scope', function ($scope) {
+
+        $scope.$on('done', function(ngRepeatFinishedEvent) {
+
+            console.log("Patients rendered.");
+        });
+    }]);
+
     app.directive('onFinishRender', function ($timeout) {
         return {
             restrict: 'A',
@@ -26,15 +34,6 @@
             }
         };
     });
-
-
-    app.controller('PatientController', ['$scope', function ($scope) {
-
-        $scope.$on('done', function(ngRepeatFinishedEvent) {
-
-            console.log("Patients rendered.");
-        });
-    }]);
 
     function generatePatients($scope) {
 
