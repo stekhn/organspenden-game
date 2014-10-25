@@ -15,6 +15,11 @@
 		"lungs": 2 
 	},
 
+	"minHealth" : 50,
+	"maxHealth": 100,
+	"minChances": 50,
+	"maxChances": 100,
+
 	"factor": 365
 }
 
