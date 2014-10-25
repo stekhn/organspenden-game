@@ -13,7 +13,7 @@
 
         <!--<script type="text/javascript" src="vendor/angular/angular.min.js"></script>-->
         <!--<script type="text/javascript" src="vendor/angular/angular-dragdrop.min.js"></script>-->
-        <!--<script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>-->
+        <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
 
         <script data-require="angular.js@1.1.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js" data-semver="1.1.5"></script>
 
@@ -57,10 +57,10 @@
             </aside>
 
             <main>
-                <section class="patients">
+                <section class="patients" ng-controller="RenderController">
 
 
-                    <div class="patient"  drop-channel="A" ui-on-drop="onDrop(patient, $data)" ng-repeat="patient in patients | orderBy:'health'" >
+                    <div class="patient" drop-channel="A" ui-on-drop="onDrop(patient, $data)" ng-repeat="patient in patients | orderBy:'health'" on-finish-render="done">
 
                         <img class="patient-picture" src="img/person-lebendig.svg"
                              alt="This picture loads on non-supporting browsers."/>
@@ -72,7 +72,6 @@
                                 <div class="bar" style="width: {{patient.health}}%;"></div>
                                 <div class="text">{{patient.health}}</div>
                             </div>
-                            <div class="patient-chances">{{patient.chances}}</div>
                             <div class="patient-chances">{{patient.type}}</div>
                             <div class="patient-chances">{{patient.saved}}</div>
                         </div>
