@@ -23,7 +23,18 @@
 
     <body ng-controller="JsonLoaderCtrl">
 
-        <section class="welcome popup"></section>
+        <section id="welcome" ng-hide="started">
+            <div class="circle">
+                <h1>Leben retten...</h1>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam, at atque beatae culpa
+                    deleniti, eligendi error exercitationem fugit id inventore, magni ratione reprehenderit similique
+                    totam. Consectetur eum nemo quas.</p>
+
+                <div id="startbtn" ng-click="startGame()"><img src="img/start.svg" alt=""/></div>
+            </div>
+        </section>
+
         <section class="results popup"></section>
         <section class="event popup"></section>
 

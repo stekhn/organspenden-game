@@ -8,8 +8,6 @@
 
             $scope.data = data;
 
-            generatePatients($scope);
-            generateOrgans($scope);
         });
 
         $scope.onDrop = function (target, source) {
@@ -24,10 +22,19 @@
 
         };
 
+        $scope.started = false;
+
+        $scope.startGame = function () {
+            $scope.started = true;
+
+            generatePatients($scope);
+            generateOrgans($scope);
+        };
+
         $scope.savedCounter = 0;
         $scope.diedCounter = 0;
         $scope.illCounter = 0;
-        $scope.getNumber = function(num) {
+        $scope.getNumber = function (num) {
             return new Array($scope.savedCounter);
         }
 
@@ -92,7 +99,7 @@
 
         var patients = $('.patient-health');
 
-        $.each(patients, function(key, value) {
+        $.each(patients, function (key, value) {
 
             var start = new Date();
             var maxTime = Math.floor(Math.random() * (($scope.data.maxSpeed - $scope.data.minSpeed) + $scope.data.minSpeed));
@@ -114,7 +121,7 @@
 
                 var now = new Date();
                 var timeDiff = now.getTime() - start.getTime();
-                var time = Math.round((timeDiff/maxTime));
+                var time = Math.round((timeDiff / maxTime));
 
                 if (time >= 0) {
                     updateProgress();

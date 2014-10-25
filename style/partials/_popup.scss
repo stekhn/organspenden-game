@@ -1,0 +1,45 @@
+#welcome {
+
+  h1 {
+
+  }
+
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  background: #ffffff;
+}
+
+.circle {
+  color: #ffffff;
+  width: 500px;
+  height: 500px;
+  border-radius: 500px;
+  margin: 0 auto;
+  padding: 100px;
+
+  background: #888;
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.4em;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.4em;
+  }
+
+  #startbtn {
+    margin-top: 1em;
+    text-align: right;
+    img {
+      width: 100px;
+      cursor: pointer;
+    }
+
+  }
+}
