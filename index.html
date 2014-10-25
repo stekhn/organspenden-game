@@ -26,7 +26,7 @@
             <aside>
                 <h1>{{data.applicationName}}</h1>
                 <section class="organs">
-                    <div class="organ" ng-repeat="(key, value) in dataset"></div>
+                    <div class="organ" ng-repeat="organ in organs">{{organ.type}}</div>
                 </section>
                 <section class="campaign">
                     <div class="campaign-progress"></div>

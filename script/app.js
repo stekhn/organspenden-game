@@ -9,6 +9,7 @@
 			$scope.data = data;
 
 			generatePatients($scope);
+			generateOrgans($scope);
 		});
 
 	}]);
@@ -20,9 +21,23 @@
 		for (var organ in $scope.data.patients) {
 			for (var i = 0; i < $scope.data.patients[organ]; i++) {
 				$scope.patients.push({
-					"organ": organ,
+					"type": organ,
 					"health": Math.floor(Math.random() * ($scope.data.maxHealth - $scope.data.minHealth) + $scope.data.minHealth),
 					"chances": Math.floor(Math.random() * ($scope.data.maxChances - $scope.data.minChances) + $scope.data.minChances)
+				});
+			}
+		}
+	}
+
+	function generateOrgans($scope) {
+
+		$scope.organs = [];
+
+		for (var organ in $scope.data.donors) {
+			for (var i = 0; i < $scope.data.donors[organ]; i++) {
+				console.log(organ);
+				$scope.organs.push({
+					"type": organ,
 				});
 			}
 		}
