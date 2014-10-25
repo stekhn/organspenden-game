@@ -14,10 +14,11 @@
 
         $scope.onDrop = function (target, source) {
 
-            console.log(this);
-            if (target.type, source.type) {
 
-                $scope.patients[target.index].saved = "true";
+            console.log(target);
+            if (target.type === source.type) {
+
+                target.saved = true;
             }
         };
 
@@ -52,7 +53,7 @@
         for (var organ in $scope.data.patients) {
             for (var i = 0; i < $scope.data.patients[organ]; i++) {
                 $scope.patients.push({
-                    "saved": "false",
+                    "saved": false,
                     "index": i,
                     "type": organ,
                     "health": Math.floor(Math.random() * ($scope.data.maxHealth - $scope.data.minHealth) + $scope.data.minHealth),

@@ -62,9 +62,13 @@
 
                     <div class="patient"  drop-channel="A" ui-on-drop="onDrop(patient, $data)" ng-repeat="patient in patients | orderBy:'health'" >
 
-                        <img class="patient-picture" src="img/person-lebendig.svg"
-                             alt="This picture loads on non-supporting browsers."/>
-                        <img class="patient-organ" src=""/>
+                        <div ng-switch on="patient.saved">
+                            <img ng-switch-when="false" class="patient-picture" src="img/person-rot-{{patient.type}}.svg"
+                                 alt="This picture loads on non-supporting browsers." />
+                            <img ng-switch-when="true" class="patient-picture" src="img/person-lebendig.svg"
+                                 alt="This picture loads on non-supporting browsers." ng-show="patient.saved" />
+                        </div>
+
 
                         <div class="patient-status">
                             <div>{{patient.organ}}</div>
