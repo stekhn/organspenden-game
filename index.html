@@ -74,10 +74,12 @@
                 <section class="status"></section>
             </main>
             <aside class="result-content">
-                <p>{{savedCounter}}</p>
-                <img class="saved-picture"
-                     src="img/person-lebendig.svg"
-                     alt="This picture loads on non-supporting browsers."/>
+
+                <p class="saved"><span>{{savedCounter}}</span>wurden gerettet</p>
+
+                <p class="dead"><span>{{diedCounter}}</span>sind leider gestorben</p>
+
+                <p class="ill"><span>{{illCounter}}</span>sind derzeit krank</p>
             </aside>
         </div>
 

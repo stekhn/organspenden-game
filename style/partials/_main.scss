@@ -9,7 +9,7 @@
 }
 
 aside {
-  width: 200px;
+  width: 250px;
   flex: 0 auto;
 }
 
@@ -20,7 +20,6 @@ aside {
 .result-content {
   border-left: 1px solid #ccc;
 }
-
 
 main {
   flex: 3 0px;
@@ -70,7 +69,32 @@ main {
   width: 50px;
 }
 
-
-.saved-picture{
+.saved-picture {
   width: 20px;
+}
+
+.result-content {
+  p {
+    text-align: left;
+    color: #888;
+    padding: 0.8em;
+  }
+  span {
+    font-weight: bold;
+    font-size: 40px;
+  }
+}
+
+.saved {
+  span {
+    color: #6DB502;
+
+  }
+}
+
+.dead {
+  span {
+    color: #333333;
+
+  }
 }

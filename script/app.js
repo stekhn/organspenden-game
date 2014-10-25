@@ -22,10 +22,11 @@
                 $scope.savedCounter++;
             }
 
-            console.log(source.index);
         };
 
         $scope.savedCounter = 0;
+        $scope.diedCounter = 0;
+        $scope.illCounter = 0;
         $scope.getNumber = function(num) {
             return new Array($scope.savedCounter);
         }
