@@ -28,7 +28,6 @@
 
         $scope.$on('done', function(ngRepeatFinishedEvent) {
 
-            console.log("Patients rendered.");
             healthCounter($scope);
         });
     }]);
@@ -82,7 +81,30 @@
         var patients = $('.patient-health');
 
         $.each(patients, function(key, value) {
-            decreaseHealth(patients[key].children[1].style.width, patients[key].children[1].innerHTML);
+            //decreaseHealth(patients[key].children[1].style.width, patients[key].children[1].innerHTML);
+            var start = new Date();
+            var maxTime = 360;
+
+            animateUpdate();
+
+            function updateProgress() {
+
+                var value = parseInt(patients[key].children[0].style.width.replace("%", ""));
+                patients[key].children[0].style.width = --value + "%";
+                patients[key].children[1].innerHTML = --value + "%";
+            }
+
+            function animateUpdate() {
+                
+                var now = new Date();
+                var timeDiff = now.getTime() - start.getTime();
+                var time = Math.round((timeDiff/maxTime));
+
+                if (time <= 100) {
+                    updateProgress();
+                    setTimeout(animateUpdate, maxTime);
+                }
+            }
         });
     }
 
