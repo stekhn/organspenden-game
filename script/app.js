@@ -31,7 +31,7 @@
 
         $scope.started = false;
         $scope.day = 0;
-        $scope.level = 0;
+        $scope.level = 3;
 
         $scope.startGame = function () {
 
