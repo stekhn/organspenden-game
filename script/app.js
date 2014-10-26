@@ -51,7 +51,6 @@
 
 
     function enableDonation($scope) {
-        console.log('-------##');
         $scope.donationDisabled = false;
     }
 
@@ -137,7 +136,6 @@
                 }
 
                 if ($scope.patients[key].health <= 0 && $scope.patients[key].status === "alive") {
-                    console.log('dead');
                     $scope.patients[key].status = "dead";
                     $scope.$parent.deadCounter++;
                 }
