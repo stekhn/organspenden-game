@@ -34,7 +34,7 @@
                 <div id="startbtn" ng-click="startGame()"><img src="img/start.svg" alt=""/></div>
 
                 <div>
-                    <img ng-repeat="organ in data.organs" src="img/organ/{{organ}}.svg" class="{{organ}} start-organ"
+                    <img ng-repeat="organ in data.organs" ng-src="img/organ/{{organ}}.svg" class="{{organ}} start-organ"
                          alt="This picture loads on non-supporting browsers."/>
                 </div>
             </div>
@@ -54,7 +54,7 @@
 
                     <div ng-repeat="organ in organs" ui-draggable="true" drag="{{organ}}" drag-channel="A"
                          ng-show="organ.unused">
-                        <img class="organ-picture" src="img/organ/{{organ.type}}.svg"
+                        <img class="organ-picture" ng-src="img/organ/{{organ.type}}.svg"
                              alt="This picture loads on non-supporting browsers."/>
                     </div>
 
@@ -74,7 +74,7 @@
 
                         <div ng-switch on="patient.status">
                             <img ng-switch-when="alive" class="patient-picture"
-                                 src="img/person-{{patient.type}}.svg"
+                                 ng-src="img/person-{{patient.type}}.svg"
                                  alt="This picture loads on non-supporting browsers."/>
                             <img ng-switch-when="saved" class="patient-picture" src="img/person-lebendig.svg"
                                  alt="This picture loads on non-supporting browsers."/>
