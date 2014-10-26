@@ -20,10 +20,7 @@
                 $scope.organs[source.index].unused = false;
                 target.status = "saved";
                 $scope.savedCounter++;
-                console.log(target);
             }
-
-            console.log(source.index);
         };
 
         $scope.started = false;
@@ -36,11 +33,8 @@
         };
 
         $scope.savedCounter = 0;
-        $scope.diedCounter = 0;
+        $scope.deadCounter = 0;
         $scope.illCounter = 0;
-        $scope.getNumber = function (num) {
-            return new Array($scope.savedCounter);
-        };
 
     }]);
 
@@ -118,8 +112,10 @@
                     $scope.$apply();
                 }
 
-                if ($scope.patients[key].health <= 0) {
+                if ($scope.patients[key].health <= 0 &&  $scope.patients[key].status === "alive") {
+                    console.log('dead');
                     $scope.patients[key].status = "dead";
+                    $scope.$parent.deadCounter++;
                 }
             }
 
