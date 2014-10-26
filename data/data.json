@@ -92,7 +92,7 @@
         {
             "win": {
                 "heading": "Level 1",
-                "text": "Fantastisch!<br><br>Du hast insgesamt 6 Patienten mit einer neuen Niere gerettet, so viele wie täglich in Deutschland transplantiert werden! In der gleichen Zeit sterben aber im Schnitt auch 1,2 Patienten, weil es nicht genug Organe gibt."
+                "text": "Fantastisch!<br><br>Du hast Patienten mit einer neuen Niere gerettet, so viele wie täglich in Deutschland transplantiert werden! In der gleichen Zeit sterben aber im Schnitt auch 1,2 Patienten, weil es nicht genug Organe gibt."
             },
             "lose": {
                 "heading": "Level 1",
@@ -117,16 +117,6 @@
             "lose": {
                 "heading": "Level 3",
                 "text": "Schon ganz gut…<br><br>… aber noch nicht gut genug. Du hast xx Menschen gerettet. In Deutschland werden aber täglich 6 Nieren, 3 Lebern und eine Lunge transplantiert.<br><br>Das schaffst du doch auch!"
-            }
-        },
-        {
-            "win": {
-                "heading": "Alles geschafft",
-                "text": "gewonnen"
-            },
-            "lose": {
-                "heading": "Level 4",
-                "text": "Schon ganz gut…<br><br>… aber nicht gut genug. Täglich wird nur ein Herz in Deutschland transplantiert. Probier’s gleich noch einmal!"
             }
         },
         {
