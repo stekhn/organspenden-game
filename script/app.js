@@ -100,8 +100,8 @@
 
         $scope.patients = [];
 
-        for (var organ in $scope.data.patients) {
-            for (var i = 0; i < $scope.data.patients[organ]; i++) {
+        for (var organ in $scope.data.patients[$scope.level]) {
+            for (var i = 0; i < $scope.data.patients[$scope.level][organ]; i++) {
                 $scope.patients.push({
                     "status": "alive",
                     "index": i,
