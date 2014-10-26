@@ -2,12 +2,13 @@
 
     var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
     var isChrome = !!window.chrome && !isOpera;
+    var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
     var app = angular.module('app', ['ngDragDrop', 'ngSanitize']);
 
     app.controller('MainCtrl', ['$scope', '$http', '$timeout', function ($scope, $http, $timeout) {
 
-        if (!isChrome) {
+        if (!isChrome && !isFirefox) {
             $scope.showFallback = true;
         }
 
