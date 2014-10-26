@@ -81,6 +81,59 @@
             "lung",
             "heart"
         ]
+    ],
+
+    "messages": [
+        {
+            "win": {
+                "heading": "Heading",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            },
+            "lose": {
+                "heading": "Heading",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            }
+        },
+        {
+            "win": {
+                "heading": "Heading",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            },
+            "lose": {
+                "heading": "Heading",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            }
+        },
+        {
+            "win": {
+                "heading": "Heading",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            },
+            "lose": {
+                "heading": "Heading",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            }
+        },
+        {
+            "win": {
+                "heading": "Heading",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            },
+            "lose": {
+                "heading": "Heading",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            }
+        },
+        {
+            "win": {
+                "heading": "Heading",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            },
+            "lose": {
+                "heading": "Heading",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            }
+        }
     ]
 }
 
