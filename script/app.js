@@ -14,7 +14,7 @@
 
         $scope.onDrop = function (target, source) {
 
-            if (target.type === source.type) {
+            if (target.type === source.type && target.status != "dead") {
 
 
                 $scope.organs[source.index].unused = false;
@@ -27,7 +27,7 @@
         $scope.day = 0;
 
         $scope.startGame = function () {
-
+            $scope.level = 0;
             disableCampaign($scope, $timeout);
             $scope.started = true;
             generatePatients($scope);
@@ -107,17 +107,21 @@
 
     function generateOrgans($scope) {
 
-        var counter = 0;
-        for (var organ in $scope.data.donors) {
-            for (var i = 0; i < $scope.data.donors[organ]; i++) {
+        var organs = $scope.data.level[$scope.level];
 
-                $scope.organs.push({
-                    "unused": true,
-                    "type": organ,
-                    "index": counter
-                });
-                counter++;
-            }
+        var min = 0;
+        var max = organs.length -1;
+
+        for (var i = 0; i<=6; i++) {
+
+            var index = Math.random() * (max - min) + min;
+            var type = organs[Math.round(index)];
+
+            $scope.organs.push({
+                "unused": true,
+                "type": type,
+                "index": i
+            });
         }
     }
 
