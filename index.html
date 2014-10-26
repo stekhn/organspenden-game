@@ -40,7 +40,7 @@
 
                     <p ng-bind-html="popupText"></p>
 
-                    <div id="startbtn" ng-click="startGame()"><img src="img/start.svg" alt=""/></div>
+                    <div ng-hide="ended" id="startbtn" ng-click="startGame()"><img src="img/start.svg" alt=""/></div>
 
                     <div>
                         <img ng-repeat="organ in data.organs" ng-src="img/organ/{{organ}}.svg"
