@@ -33,6 +33,8 @@
 
     "factor": 365,
 
+    "campaignStop": 15000,
+
     "level": [
         ["kidney"],
         [

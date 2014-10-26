@@ -35,7 +35,7 @@
 
         $scope.startCampaign = function () {
             if (!$scope.donationDisabled) {
-                generateOrgans($scope);
+                generateOrgans($scope, 3);
                 disableCampaign($scope, $timeout)
             }
         }
@@ -59,7 +59,7 @@
 
         $timeout(function () {
             enableDonation($scope)
-        }, 5000)
+        }, $scope.data.campaignStop);
     }
 
 
@@ -103,14 +103,19 @@
         }
     }
 
-    function generateOrgans($scope) {
+    function generateOrgans($scope, count) {
 
         var organs = $scope.data.level[$scope.level];
 
         var min = 0;
-        var max = organs.length -1;
+        var max = organs.length - 1;
 
-        for (var i = 0; i<=6; i++) {
+        var length = 6;
+        if (count) {
+            length = Math.round(Math.random() * (count - 1) + 1);
+        }
+
+        for (var i = 0; i <= length; i++) {
 
             var index = Math.random() * (max - min) + min;
             var type = organs[Math.round(index)];
