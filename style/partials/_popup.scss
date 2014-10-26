@@ -46,21 +46,25 @@
 
 .start-organ{
   position: absolute;
-  width: 100px;
+  width: 80px;
 
-  &.heart{
+  &.kidney{
     top: 300px;
     left: -25px;
   }
-
   &.liver{
-    top: 400px;
-    left: 40px;
+    top: 380px;
+    left: 16px
   }
 
   &.lung{
-    top: 450px;
-    left: 150px;
+    top: 436px;
+    left: 83px;
+  }
+
+  &.heart{
+    top: 463px;
+    left: 170px;
   }
 }
 
