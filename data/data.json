@@ -91,16 +91,6 @@
     "messages": [
         {
             "win": {
-                "heading": "The waiting list",
-                "text": "Bist du noch zu retten?<br>Niere, Lunge, Herz – rund 12.000 Menschen warten in diesem Moment auf ein neues Organ. Die Zahl der Spender ist dagegen so niedrig wie noch nie.<br>Jetzt bist du am Zug: Kannst du die Patienten mit einer Transplantation retten?"
-            },
-            "lose": {
-                "heading": "The waiting list",
-                "text": "Bist du noch zu retten?<br>Niere, Lunge, Herz – rund 12.000 Menschen warten in diesem Moment auf ein neues Organ. Die Zahl der Spender ist dagegen so niedrig wie noch nie.<br>Jetzt bist du am Zug: Kannst du die Patienten mit einer Transplantation retten?"
-            }
-        },
-        {
-            "win": {
                 "heading": "Level 1",
                 "text": "Fantastisch!<br><br>Du hast insgesamt 6 Patienten mit einer neuen Niere gerettet, so viele wie täglich in Deutschland transplantiert werden! In der gleichen Zeit sterben aber im Schnitt auch 1,2 Patienten, weil es nicht genug Organe gibt."
             },
@@ -111,12 +101,22 @@
         },
         {
             "win": {
+                "heading": "Level 2",
+                "text": "Die Leber wird in Deutschland am zweithäufigsten transplantiert. Du startest mit 1868 Menschen, die 2012 auf der Warteliste standen. Versorge Nieren- und Leberpatienten mit einem neuen Organ."
+            },
+            "lose": {
+                "heading": "Level 2",
+                "text": "Schon ganz gut…<br><br>… aber nicht gut genug. Du hast XX Menschen gerettet. In Deutschland werden aber täglich etwa 6 Nieren und 3 Lebern transplantiert."
+            }
+        },
+        {
+            "win": {
                 "heading": "Level 3",
-                "text": "gewonnen"
+                "text": "Drittes Organ: die Lunge. 483 Patienten standen 2012 auf der Warteliste. Verteile Niere, Leber und Lunge richtig und vor allem schnell genug! Denn: Je weniger Zeit zwischen Organentnahme und Transplantation liegt, umso größer ist die Erfolgschance."
             },
             "lose": {
                 "heading": "Level 3",
-                "text": "verloren"
+                "text": "Schon ganz gut…<br><br>… aber noch nicht gut genug. Du hast xx Menschen gerettet. In Deutschland werden aber täglich 6 Nieren, 3 Lebern und eine Lunge transplantiert.<br><br>Das schaffst du doch auch!"
             }
         },
         {
@@ -126,7 +126,7 @@
             },
             "lose": {
                 "heading": "Level 4",
-                "text": "verloren"
+                "text": "Schon ganz gut…<br><br>… aber nicht gut genug. Täglich wird nur ein Herz in Deutschland transplantiert. Probier’s gleich noch einmal!"
             }
         },
         {
@@ -136,7 +136,7 @@
             },
             "lose": {
                 "heading": "Level 4",
-                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+                "text": "Schon ganz gut…<br><br>… aber nicht gut genug. Täglich wird nur ein Herz in Deutschland transplantiert. Probier’s gleich noch einmal!"
             }
         }
     ]
