@@ -12,6 +12,7 @@
         }
 
         $scope.started = false;
+        $scope.ended = false;
         $scope.won = false;
         $scope.day = 0;
         $scope.level = 0;
@@ -34,8 +35,6 @@
                 $scope.savedCounter++;
             }
         };
-
-
 
 
         $scope.startGame = function () {
@@ -86,7 +85,7 @@
         $scope.$on('done', function (ngRepeatFinishedEvent) {
 
             $timeout(function () {
-                healthCounter($scope);
+                healthCounter($scope, $timeout);
             }, 1000);
 
         });
@@ -160,7 +159,7 @@
         }
     }
 
-    function healthCounter($scope) {
+    function healthCounter($scope, $timeout) {
 
         $.each($scope.patients, function (key, value) {
 
@@ -174,7 +173,7 @@
                 $scope.$parent.started = $scope.deadCounter + $scope.savedCounter != $scope.patients.length;
 
                 if (!$scope.$parent.started) {
-                    levelControl($scope.$parent);
+                    levelControl($scope.$parent, $timeout);
                 }
 
                 if ($scope.patients[key].health > 0 && $scope.patients[key].status === "alive") {
@@ -214,9 +213,12 @@
         }
     }
 
-    function levelControl($scope) {
+    function levelControl($scope, $timeout) {
 
-        $scope.started = false;
+        $timeout(function () {
+            $scope.started = false;
+        }, 1000);
+
 
         var msg = $scope.data.messages[$scope.level];
 
@@ -227,14 +229,15 @@
 
             $scope.popupTitle = msg.win.heading;
             $scope.popupText = msg.win.text;
+            if ($scope.level > 3){
+                $scope.ended = true;
+            }
 
         } else {
             $scope.won = false;
-            console.log("you loose");
-
 
             $scope.popupTitle = msg.lose.heading;
-            $scope.popupText = msg.lose.text + "<br/> du hast nur " + $scope.savedCounter + " von " + $scope.patients.length + " gerettet.";
+            $scope.popupText = msg.lose.text + "<br/> <br/> Du hast " + $scope.savedCounter + " von " + $scope.patients.length + " gerettet.";
         }
 
     }
