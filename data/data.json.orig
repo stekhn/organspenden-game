@@ -1,0 +1,178 @@
+{
+
+    "applicationName": "The waiting list",
+
+    "organs": [
+        "liver",
+        "heart",
+        "lung",
+        "kidney"
+    ],
+
+    "patients": [
+        {
+            "kidney": 6
+        },
+        {
+            "kidney": 6,
+            "liver": 3
+        },
+        {
+            "kidney": 6,
+            "liver": 3,
+            "lung": 1
+        },
+        {
+            "kidney": 6,
+            "liver": 3,
+            "lung": 1,
+            "heart": 1
+        }
+    ],
+
+    "donors": [
+        {
+            "kidney": 2
+        },
+        {
+            "kidney": 3,
+            "liver": 1
+        },
+        {
+            "kidney": 4,
+            "liver": 2,
+            "lung": 0
+        },
+        {
+            "kidney": 4,
+            "liver": 2,
+            "lung": 1,
+            "heart": 1
+        }
+    ],
+
+
+    "illPersons": 7654,
+
+    "minHealth": 50,
+    "maxHealth": 100,
+
+    "minSpeed": 182,
+    "maxSpeed": 365,
+
+    "factor": 365,
+
+    "campaignStop": 5000,
+
+    "level": [
+        ["kidney"],
+        [
+            "kidney",
+            "liver"
+        ],
+        [
+            "kidney",
+            "liver",
+            "lung"
+        ],
+        [
+            "kidney",
+            "liver",
+            "lung",
+            "heart"
+        ]
+    ],
+
+    "startText": {
+        "heading": "The waiting list",
+        "text": "Bist du noch zu retten? <br/> <br/> Niere, Lunge, Herz – rund 12.000 Menschen warten in diesem Moment auf ein neues Organ. Die Zahl der Spender ist dagegen so niedrig wie noch nie.<br/> <br/> Jetzt bist du am Zug: Kannst du die Patienten mit einer Transplantation retten?"
+    },
+
+    "messages": [
+        {
+            "win": {
+<<<<<<< HEAD
+                "heading": "The waiting list",
+                "text": "Bist du noch zu retten?<br>Niere, Lunge, Herz – rund 12.000 Menschen warten in diesem Moment auf ein neues Organ. Die Zahl der Spender ist dagegen so niedrig wie noch nie.<br>Jetzt bist du am Zug: Kannst du die Patienten mit einer Transplantation retten?"
+            },
+            "lose": {
+                "heading": "The waiting list",
+                "text": "Bist du noch zu retten?<br>Niere, Lunge, Herz – rund 12.000 Menschen warten in diesem Moment auf ein neues Organ. Die Zahl der Spender ist dagegen so niedrig wie noch nie.<br>Jetzt bist du am Zug: Kannst du die Patienten mit einer Transplantation retten?"
+            }
+        },
+        {
+            "win": {
+                "heading": "Level 1",
+                "text": "Fantastisch!<br><br>Du hast insgesamt 6 Patienten mit einer neuen Niere gerettet, so viele wie täglich in Deutschland transplantiert werden! In der gleichen Zeit sterben aber im Schnitt auch 1,2 Patienten, weil es nicht genug Organe gibt."
+            },
+            "lose": {
+                "heading": "Level 1",
+                "text": "Schon ganz gut…<br><br>... aber nicht gut genug. Du hast xx Menschen gerettet. In Deutschland werden aber täglich etwa 6 Nieren transplantiert. Das schaffst du doch auch!<br><br>Tipp: Der Zustand der Patienten verschlechtert sich immer gleich schnell. Schau auch, wen du zuerst rettest!"
+=======
+                "heading": "Level 1",
+                "text": "gewonnen"
+            },
+            "lose": {
+                "heading": "Level 1",
+                "text": "verloren"
+>>>>>>> 31834ee984240329a70b8c7d872c94ef466daeb6
+            }
+        },
+        {
+            "win": {
+                "heading": "Level 2",
+<<<<<<< HEAD
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            },
+            "lose": {
+                "heading": "Level 2",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+=======
+                "text": "gewonnen"
+            },
+            "lose": {
+                "heading": "Level 2",
+                "text": "verloren"
+>>>>>>> 31834ee984240329a70b8c7d872c94ef466daeb6
+            }
+        },
+        {
+            "win": {
+                "heading": "Level 3",
+<<<<<<< HEAD
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+            },
+            "lose": {
+                "heading": "Level 3",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+=======
+                "text": "gewonnen"
+            },
+            "lose": {
+                "heading": "Level 3",
+                "text": "verloren"
+>>>>>>> 31834ee984240329a70b8c7d872c94ef466daeb6
+            }
+        },
+        {
+            "win": {
+<<<<<<< HEAD
+                "heading": "Großartig!",
+                "text": "Du bist der Champ der Organtransplantation! 6 Nieren, 3 Lebern, eine Lunge und ein Herz. Damit hast du 11 Menschen das Leben gerettet! <br> Im Schnitt wird in Deutschland jeden Tag: 10,8 Patienten ein Spenderorgan transplantiert, 3,4 Patienten aus anderen Gründen von der Warteliste gestrichen, 15,3 Patienten neu registriert.<br><br>Aktuell warten rund 12.000 Patienten in Deutschland auf ein Spenderorgan.<br><br>28 Prozent der Deutschen haben einen Organspendeausweis."
+            },
+            "lose": {
+                "heading": "Level 4",
+                "text": "Lorem ipsum dolores sit amet <br> Blabalblubbb"
+=======
+                "heading": "Alles geschafft",
+                "text": "gewonnen"
+            },
+            "lose": {
+                "heading": "Level 4",
+                "text": "verloren"
+>>>>>>> 31834ee984240329a70b8c7d872c94ef466daeb6
+            }
+        }
+    ]
+}
+

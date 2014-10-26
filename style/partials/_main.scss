@@ -1,36 +1,60 @@
 .wrapper {
-  display: flex;
-  flex-flow: row nowrap;
-
-  font-weight: bold;
+  //  display: flex;
+  //  flex-flow: row nowrap;
+  font-weight: 400;
   text-align: center;
-  height: 100%;
-  min-height: 100%;
+  /* height: 100%; */
+  position: absolute;
+  top: 95px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
 }
 
 aside {
   width: 250px;
-  flex: 0 auto;
+  top: 0;
+  bottom: 0;
+
+}
+
+.organs {
+  position: absolute;
+  top: 0;
+  bottom: 50px;
+  left: 0;
+  width: 250px;
+  overflow: auto;
 }
 
 .organ-list {
   border-right: 1px solid #ccc;
+  position: absolute;
+  left: 0;
 }
 
 .result-content {
   border-left: 1px solid #ccc;
+  position: absolute;
+  right: 0;
 }
 
 main {
-  flex: 3 0px;
+  //  flex: 3 0px;
+  position: absolute;
+  left: 250px;
+  /* float: left; */
+  right: 250px;
+  overflow: auto;
+  background: #ffffff;
   overflow: auto;
   background: #ffffff;
 }
 
 .patient {
-  width: 60px;
+  width: 45px;
   display: inline-block;
-  margin: 1em 3em 1em 0;
+  margin: 1em 1.5em 1em 1.5em;
 
   img {
     width: 100%;
@@ -67,6 +91,7 @@ main {
 
 .organ-picture {
   width: 50px;
+  margin: 5px;
 }
 
 .saved-picture {
@@ -82,7 +107,7 @@ main {
   }
 
   .counter {
-    font-weight: bold;
+    font-weight: 800;
     font-size: 40px;
     padding-right: 5px;
     text-align: left;
@@ -96,9 +121,43 @@ main {
   }
 }
 
-.dead {
-  .counter {
-    color: #333333;
+.counter {
+  color: #333333;
+}
 
+.day {
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 1em;
+}
+
+.campaign button {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 250px;
+  background: #888;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+  line-height: 50px;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.campaign button.disabled {
+  background: #efefef;
+  cursor: default;
+}
+
+.fallback {
+  width: 300px;
+  margin: 2em auto;
+
+  h1 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
   }
 }
