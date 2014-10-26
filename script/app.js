@@ -142,6 +142,7 @@
                 if ($scope.patients[key].health <= 0 && $scope.patients[key].status === "alive") {
                     $scope.patients[key].status = "dead";
                     $scope.$parent.deadCounter++;
+                    $scope.$apply();
                 }
             }
 
