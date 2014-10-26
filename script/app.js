@@ -193,8 +193,8 @@
 
     function levelControl($scope) {
         
-        if ($scope.patients.length != $scope.patients) {
-            
+        if ($scope.patients.length > $scope.savedCounter / 2) {
+            $scope.level++;
         }
     }
 
