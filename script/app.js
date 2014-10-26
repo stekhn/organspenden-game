@@ -150,7 +150,9 @@
 
                 $scope.$parent.started = $scope.deadCounter + $scope.savedCounter != $scope.patients.length;
 
-                console.log($scope.started);
+                if(!$scope.$parent.started) {
+                    levelControl($scope.$parent);
+                }
 
                 if ($scope.patients[key].health > 0 && $scope.patients[key].status === "alive") {
                     --$scope.patients[key].health;
@@ -186,6 +188,13 @@
                 $scope.$apply();
                 dayCounter($scope);
             }, 1000);
+        }
+    }
+
+    function levelControl($scope) {
+        
+        if ($scope.patients.length != $scope.patients) {
+            
         }
     }
 
