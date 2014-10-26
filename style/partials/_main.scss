@@ -1,6 +1,6 @@
 .wrapper {
-//  display: flex;
-//  flex-flow: row nowrap;
+  //  display: flex;
+  //  flex-flow: row nowrap;
   font-weight: 400;
   text-align: center;
   /* height: 100%; */
@@ -29,7 +29,7 @@ aside {
 
 .organ-list {
   border-right: 1px solid #ccc;
-position: absolute;
+  position: absolute;
   left: 0;
 }
 
@@ -40,7 +40,7 @@ position: absolute;
 }
 
 main {
-//  flex: 3 0px;
+  //  flex: 3 0px;
   position: absolute;
   left: 250px;
   /* float: left; */
@@ -121,11 +121,13 @@ main {
   }
 }
 
-.dead {
-  .counter {
-    color: #333333;
+.counter {
+  color: #333333;
+}
 
-  }
+.day {
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 1em;
 }
 
 .campaign button {
@@ -133,7 +135,7 @@ main {
   bottom: 0px;
   left: 0;
   width: 250px;
-  background: #bf3600;
+  background: #cccccc;
 
   margin: 0;
   padding: 0;
@@ -145,7 +147,7 @@ main {
 }
 
 .campaign button.disabled {
-  background: #e6bb8b;
+  background: #efefef;
   cursor: default;
 }
 

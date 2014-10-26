@@ -34,7 +34,7 @@
 
             <section id="welcome" class="popup" ng-hide="started">
                 <div class="circle">
-                    <h1>The waiting list</h1>
+                    <h1>{{data.applicationName}}</h1>
 
                     <h3>Bist du noch zu retten?</h3>
 
@@ -111,6 +111,12 @@
                     <section class="status"></section>
                 </main>
                 <aside class="result-content">
+                    <div class="day">
+                        <p class="text">Tag  <span class="counter">{{level + 1}}</span></p>
+
+
+
+                    </div>
 
                     <div class="saved">
                         <p class="counter">{{savedCounter}}</p>
@@ -121,7 +127,7 @@
                     <div class="dead">
                         <p class="counter">{{deadCounter}}</p>
 
-                        <p class="text">sind leider gestorben</p>
+                        <p class="text">sind gestorben</p>
                     </div>
 
 
@@ -131,11 +137,7 @@
                         <p class="text">stehen derzeit auf der Warteliste</p>
                     </div>
 
-                    <div class="day">
-                        <p class="counter">{{level + 1}}</p>
 
-                        <p class="text">Tag</p>
-                    </div>
                 </aside>
             </div>
 
