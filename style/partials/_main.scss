@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   flex-flow: row nowrap;
-  font-weight: bold;
+  font-weight: 400;
   text-align: center;
   /* height: 100%; */
   position: absolute;
@@ -93,7 +93,7 @@ main {
   }
 
   .counter {
-    font-weight: bold;
+    font-weight: 400;
     font-size: 40px;
     padding-right: 5px;
     text-align: left;
@@ -141,7 +141,7 @@ main {
 
   h1 {
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 400;
     margin-bottom: 0.5em;
   }
 }

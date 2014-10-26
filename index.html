@@ -8,7 +8,7 @@
 
         <title>Organspenden Newsgame</title>
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300, 800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="style/main.css">
 
 
@@ -25,7 +25,8 @@
 
         <div class="fallback" ng-show="{{showFallback}}">
             <h1>Ups...</h1>
-            <p>Die Grafik wurde bisher leider  nur für Chrome optimiert.</p>
+
+            <p>Die Grafik wurde bisher leider nur für Chrome optimiert.</p>
         </div>
 
         <div ng-hide="{{showFallback}}">
@@ -33,12 +34,14 @@
 
             <section id="welcome" class="popup" ng-hide="started">
                 <div class="circle">
-                    <h1>Leben retten...</h1>
+                    <h1>The waiting list</h1>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam, at atque beatae culpa
-                        deleniti, eligendi error exercitationem fugit id inventore, magni ratione reprehenderit
-                        similique
-                        totam. Consectetur eum nemo quas.</p>
+                    <h3>Bist du noch zu retten?</h3>
+
+                    <p>Niere, Lunge, Herz – rund 12.000 Menschen warten in diesem Moment auf ein neues Organ. Die Zahl
+                        der Spender ist dagegen so niedrig wie noch nie. <br/> <br/>
+
+                    Jetzt bist du am Zug: Kannst du die Patienten mit einer Transplantation retten?</p>
 
                     <div id="startbtn" ng-click="startGame()"><img src="img/start.svg" alt=""/></div>
 
