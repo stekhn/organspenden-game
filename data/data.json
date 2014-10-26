@@ -14,27 +14,6 @@
             "kidney": 6
         },
         {
-            "kidney": 3,
-            "liver": 1
-        },
-        {
-            "kidney": 4,
-            "liver": 2,
-            "lung": 0
-        },
-        {
-            "kidney": 4,
-            "liver": 2,
-            "lung": 1,
-            "heart": 1
-        }
-    ],
-
-    "donors": [
-        {
-            "kidney": 2
-        },
-        {
             "kidney": 6,
             "liver": 3
         },
@@ -46,6 +25,27 @@
         {
             "kidney": 6,
             "liver": 3,
+            "lung": 1,
+            "heart": 1
+        }
+    ],
+
+    "donors": [
+        {
+            "kidney": 2
+        },
+        {
+            "kidney": 3,
+            "liver": 1
+        },
+        {
+            "kidney": 4,
+            "liver": 2,
+            "lung": 0
+        },
+        {
+            "kidney": 4,
+            "liver": 2,
             "lung": 1,
             "heart": 1
         }
