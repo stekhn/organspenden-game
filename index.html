@@ -15,6 +15,8 @@
         <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
         <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
 
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-sanitize.js"></script>
+
         <script src="vendor/angular/angular-dragdrop.min.js"></script>
 
         <script type="text/javascript" src="script/app.js"></script>
@@ -34,14 +36,9 @@
 
             <section id="welcome" class="popup" ng-hide="started">
                 <div class="circle">
-                    <h1>{{data.applicationName}}</h1>
+                    <h1 ng-bind-html="popupTitle"></h1>
 
-                    <h3>Bist du noch zu retten?</h3>
-
-                    <p>Niere, Lunge, Herz – rund 12.000 Menschen warten in diesem Moment auf ein neues Organ. Die Zahl
-                        der Spender ist dagegen so niedrig wie noch nie. <br/> <br/>
-
-                    Jetzt bist du am Zug: Kannst du die Patienten mit einer Transplantation retten?</p>
+                    <p ng-bind-html="popupText"></p>
 
                     <div id="startbtn" ng-click="startGame()"><img src="img/start.svg" alt=""/></div>
 

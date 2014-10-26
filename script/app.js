@@ -3,7 +3,7 @@
     var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
     var isChrome = !!window.chrome && !isOpera;
 
-    var app = angular.module('app', ['ngDragDrop']);
+    var app = angular.module('app', ['ngDragDrop', 'ngSanitize']);
 
     app.controller('MainCtrl', ['$scope', '$http', '$timeout', function ($scope, $http, $timeout) {
 
@@ -16,7 +16,8 @@
             $scope.data = data;
 
             $scope.illCounter = $scope.data.illPersons;
-
+            $scope.popupTitle = $scope.data.startText.heading;
+            $scope.popupText = $scope.data.startText.text;
         });
 
         $scope.onDrop = function (target, source) {
@@ -32,7 +33,8 @@
         $scope.started = false;
         $scope.won = false;
         $scope.day = 0;
-        $scope.level = 3;
+        $scope.level = 0;
+
 
         $scope.startGame = function () {
 
@@ -209,13 +211,25 @@
 
     function levelControl($scope) {
 
+        $scope.started = false;
+
+        var msg = $scope.data.messages[$scope.level];
+
         if ($scope.patients.length / 2 < $scope.savedCounter) {
             console.log("you win");
             $scope.level++;
             $scope.won = true;
+
+            $scope.popupTitle = msg.win.heading;
+            $scope.popupText = msg.win.text;
+
         } else {
             $scope.won = false;
             console.log("you loose");
+
+
+            $scope.popupTitle = msg.lose.heading;
+            $scope.popupText = msg.lose.text + "<br/> du hast nur " + $scope.savedCounter + " von " + $scope.patients.length + " gerettet.";
         }
 
     }
