@@ -7,7 +7,7 @@
 
     app.controller('MainCtrl', ['$scope', '$http', '$timeout', function ($scope, $http, $timeout) {
 
-        if (!isChrome){
+        if (!isChrome) {
             $scope.showFallback = true;
         }
 
@@ -31,14 +31,18 @@
 
         $scope.started = false;
         $scope.day = 0;
+        $scope.level = 0;
 
         $scope.startGame = function () {
 
-            $scope.level = 0;
             disableCampaign($scope, $timeout);
             $scope.started = true;
             $scope.savedCounter = 0;
             $scope.deadCounter = 0;
+
+            $scope.patients = [];
+            $scope.organs = [];
+
             generatePatients($scope);
             generateOrgans($scope);
             dayCounter($scope);
@@ -47,7 +51,7 @@
 
         $scope.startCampaign = function () {
             if (!$scope.donationDisabled) {
-                generateOrgans($scope, 3);
+                generateOrgansRandom($scope, 3);
                 disableCampaign($scope, $timeout)
             }
         }
@@ -56,8 +60,6 @@
 
 
         $scope.illCounter = 0;
-
-        $scope.organs = [];
     }]);
 
 
@@ -100,7 +102,6 @@
 
     function generatePatients($scope) {
 
-        $scope.patients = [];
 
         for (var organ in $scope.data.patients[$scope.level]) {
             for (var i = 0; i < $scope.data.patients[$scope.level][organ]; i++) {
@@ -116,6 +117,19 @@
 
     function generateOrgans($scope, count) {
 
+        for (var organ in $scope.data.donors[$scope.level]) {
+            for (var i = 0; i < $scope.data.donors[$scope.level][organ]; i++) {
+                $scope.organs.push({
+                    "unused": true,
+                    "type": organ,
+                    "index": i
+                });
+            }
+        }
+    }
+
+
+    function generateOrgansRandom($scope, count) {
         var organs = $scope.data.level[$scope.level];
 
         var min = 0;
@@ -152,7 +166,7 @@
 
                 $scope.$parent.started = $scope.deadCounter + $scope.savedCounter != $scope.patients.length;
 
-                if(!$scope.$parent.started) {
+                if (!$scope.$parent.started) {
                     levelControl($scope.$parent);
                 }
 
@@ -194,10 +208,14 @@
     }
 
     function levelControl($scope) {
-        
+
         if ($scope.patients.length > $scope.savedCounter / 2) {
+            console.log("you won");
             $scope.level++;
+        } else {
+            console.log("you loos");
         }
+
     }
 
 

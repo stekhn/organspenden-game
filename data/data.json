@@ -9,16 +9,30 @@
         "kidney"
     ],
 
-    "donors": {
-        "liver": 2,
-        "heart": 4,
-        "lung": 1,
-        "kidney": 3
-    },
-
     "patients": [
         {
             "kidney": 6
+        },
+        {
+            "kidney": 3,
+            "liver": 1
+        },
+        {
+            "kidney": 4,
+            "liver": 2,
+            "lung": 0
+        },
+        {
+            "kidney": 4,
+            "liver": 2,
+            "lung": 1,
+            "heart": 1
+        }
+    ],
+
+    "donors": [
+        {
+            "kidney": 2
         },
         {
             "kidney": 6,
@@ -48,7 +62,7 @@
 
     "factor": 365,
 
-    "campaignStop": 15000,
+    "campaignStop": 5000,
 
     "level": [
         ["kidney"],
