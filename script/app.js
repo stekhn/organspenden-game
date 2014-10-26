@@ -223,7 +223,6 @@
         var msg = $scope.data.messages[$scope.level];
 
         if ($scope.patients.length / 2 < $scope.savedCounter) {
-            console.log("you win");
             $scope.level++;
             $scope.won = true;
 
