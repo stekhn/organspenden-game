@@ -16,7 +16,6 @@
 
             if (target.type === source.type && target.status != "dead") {
 
-
                 $scope.organs[source.index].unused = false;
                 target.status = "saved";
                 $scope.savedCounter++;
@@ -33,6 +32,7 @@
             generatePatients($scope);
             generateOrgans($scope);
             dayCounter($scope);
+
         };
 
         $scope.startCampaign = function () {
@@ -141,16 +141,18 @@
 
             function updateProgress() {
 
+                $scope.started = $scope.deadCounter + $scope.savedCounter != $scope.patients.length;
+
                 if ($scope.patients[key].health > 0 && $scope.patients[key].status === "alive") {
                     --$scope.patients[key].health;
-                    $scope.$apply();
                 }
 
                 if ($scope.patients[key].health <= 0 && $scope.patients[key].status === "alive") {
                     $scope.patients[key].status = "dead";
                     $scope.$parent.deadCounter++;
-                    $scope.$apply();
                 }
+
+                $scope.$apply();
             }
 
             function animateUpdate() {
@@ -159,7 +161,7 @@
                 var timeDiff = now.getTime() - start.getTime();
                 var time = Math.round((timeDiff / maxTime));
 
-                if (time >= 0) {
+                if ($scope.started && time >= 0) {
                     updateProgress();
                     setTimeout(animateUpdate, maxTime);
                 }
