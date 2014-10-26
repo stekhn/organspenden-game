@@ -30,6 +30,7 @@
         };
 
         $scope.started = false;
+        $scope.won = false;
         $scope.day = 0;
         $scope.level = 0;
 
@@ -209,11 +210,13 @@
 
     function levelControl($scope) {
 
-        if ($scope.patients.length > $scope.savedCounter / 2) {
-            console.log("you won");
+        if ($scope.patients.length / 2 < $scope.savedCounter) {
+            console.log("you win");
             $scope.level++;
+            $scope.won = true;
         } else {
-            console.log("you loos");
+            $scope.won = false;
+            console.log("you loose");
         }
 
     }
