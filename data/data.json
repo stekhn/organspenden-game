@@ -3,18 +3,20 @@
 
 	"applicationName": "Organspenden Newsgame",
 
-    "organs": ["liver", "heart", "lung"],
+    "organs": ["liver", "heart", "lung", "kidney"],
 
 	"donors": {
 		"liver": 2,
 		"heart": 4,
-		"lung": 1
+		"lung": 1,
+        "kidney": 3
 	},
 
 	"patients": {
 		"liver": 4,
 		"heart": 6,
-		"lung": 2
+		"lung": 2,
+        "kidney": 7
 	},
 
     "illPersons": 7654,
