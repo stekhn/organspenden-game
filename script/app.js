@@ -33,9 +33,12 @@
         $scope.day = 0;
 
         $scope.startGame = function () {
+
             $scope.level = 0;
             disableCampaign($scope, $timeout);
             $scope.started = true;
+            $scope.savedCounter = 0;
+            $scope.deadCounter = 0;
             generatePatients($scope);
             generateOrgans($scope);
             dayCounter($scope);
@@ -51,8 +54,7 @@
 
         $scope.donationDisabled = true;
 
-        $scope.savedCounter = 0;
-        $scope.deadCounter = 0;
+
         $scope.illCounter = 0;
 
         $scope.organs = [];
