@@ -148,7 +148,9 @@
 
             function updateProgress() {
 
-                $scope.started = $scope.deadCounter + $scope.savedCounter != $scope.patients.length;
+                $scope.$parent.started = $scope.deadCounter + $scope.savedCounter != $scope.patients.length;
+
+                console.log($scope.started);
 
                 if ($scope.patients[key].health > 0 && $scope.patients[key].status === "alive") {
                     --$scope.patients[key].health;
