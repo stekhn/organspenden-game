@@ -11,6 +11,11 @@
             $scope.showFallback = true;
         }
 
+        $scope.started = false;
+        $scope.won = false;
+        $scope.day = 0;
+        $scope.level = 0;
+
         $http.get('data/data.json').success(function (data) {
 
             $scope.data = data;
@@ -30,10 +35,7 @@
             }
         };
 
-        $scope.started = false;
-        $scope.won = false;
-        $scope.day = 0;
-        $scope.level = 0;
+
 
 
         $scope.startGame = function () {
@@ -120,13 +122,16 @@
 
     function generateOrgans($scope, count) {
 
+        var counter = 0;
         for (var organ in $scope.data.donors[$scope.level]) {
             for (var i = 0; i < $scope.data.donors[$scope.level][organ]; i++) {
                 $scope.organs.push({
                     "unused": true,
                     "type": organ,
-                    "index": i
+                    "index": counter
                 });
+
+                counter++;
             }
         }
     }

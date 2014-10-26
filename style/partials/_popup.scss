@@ -12,8 +12,8 @@
 
 #startbtn {
   position: absolute;
-  bottom: 80px;
-  right: 80px;
+  bottom: 100px;
+  right: 100px;
 
   margin-top: 0em;
   text-align: right;
@@ -26,11 +26,11 @@
 
 .circle {
   color: #ffffff;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   border-radius: 500px;
   margin: 2em auto;
-  padding: 100px;
+  padding: 110px;
 
   background: #888;
 
@@ -57,25 +57,25 @@
 
 .start-organ {
   position: absolute;
-  width: 80px;
+  width: 100px;
 
   &.kidney {
     top: 300px;
-    left: -25px;
+    left: -40px;
   }
   &.liver {
-    top: 380px;
-    left: 16px
+    top: 410px;
+    left: 1px;
   }
 
   &.lung {
-    top: 436px;
+    top: 496px;
     left: 83px;
   }
 
   &.heart {
-    top: 463px;
-    left: 170px;
+    top: 540px;
+    left: 194px
   }
 }
 
