@@ -1,8 +1,15 @@
 (function () {
 
+    var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    var isChrome = !!window.chrome && !isOpera;
+
     var app = angular.module('app', ['ngDragDrop']);
 
     app.controller('MainCtrl', ['$scope', '$http', '$timeout', function ($scope, $http, $timeout) {
+
+        if (!isChrome){
+            $scope.showFallback = true;
+        }
 
         $http.get('data/data.json').success(function (data) {
 

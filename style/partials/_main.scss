@@ -124,3 +124,15 @@ main {
   background: #e6bb8b;
   cursor: default;
 }
+
+
+.fallback{
+  width: 300px;
+  margin: 2em auto;
+
+  h1{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+}
