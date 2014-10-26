@@ -135,10 +135,9 @@
         var min = 0;
         var max = organs.length - 1;
 
-        var length = 6;
-        if (count) {
-            length = Math.round(Math.random() * (count - 1) + 1);
-        }
+        var length = Math.round(Math.random() * (count - 1) + 1);
+
+        var organLength = $scope.organs.length;
 
         for (var i = 0; i <= length; i++) {
 
@@ -148,7 +147,7 @@
             $scope.organs.push({
                 "unused": true,
                 "type": type,
-                "index": i
+                "index": organLength + i
             });
         }
     }
