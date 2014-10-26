@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   flex-flow: row nowrap;
-  font-weight: bold;
+  font-weight: 400;
   text-align: center;
   /* height: 100%; */
   position: absolute;
@@ -12,6 +12,15 @@
 aside {
   width: 250px;
   flex: 0 auto;
+}
+
+.organs {
+  position: absolute;
+  top: 0;
+  bottom: 50px;
+  left: 0;
+  width: 250px;
+  overflow: auto;
 }
 
 .organ-list {
@@ -68,6 +77,7 @@ main {
 
 .organ-picture {
   width: 50px;
+  margin: 5px;
 }
 
 .saved-picture {
@@ -83,7 +93,7 @@ main {
   }
 
   .counter {
-    font-weight: bold;
+    font-weight: 400;
     font-size: 40px;
     padding-right: 5px;
     text-align: left;
@@ -123,4 +133,15 @@ main {
 .campaign button.disabled {
   background: #e6bb8b;
   cursor: default;
+}
+
+.fallback {
+  width: 300px;
+  margin: 2em auto;
+
+  h1 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+  }
 }

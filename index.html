@@ -8,7 +8,7 @@
 
         <title>Organspenden Newsgame</title>
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300, 800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="style/main.css">
 
 
@@ -23,108 +23,124 @@
 
     <body ng-controller="MainCtrl">
 
-        <section id="welcome" class="popup" ng-hide="started">
-            <div class="circle">
-                <h1>Leben retten...</h1>
+        <div class="fallback" ng-show="{{showFallback}}">
+            <h1>Ups...</h1>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam, at atque beatae culpa
-                    deleniti, eligendi error exercitationem fugit id inventore, magni ratione reprehenderit similique
-                    totam. Consectetur eum nemo quas.</p>
-
-                <div id="startbtn" ng-click="startGame()"><img src="img/start.svg" alt=""/></div>
-
-                <div>
-                    <img ng-repeat="organ in data.organs" ng-src="img/organ/{{organ}}.svg" class="{{organ}} start-organ"
-                         alt="This picture loads on non-supporting browsers."/>
-                </div>
-            </div>
-
-            <p class="description">Ein Newsgame über das Organspenden <br/>von Sonja, Steffen, Lina, Gero und Hakan</p>
-
-        </section>
-
-        <section class="results popup"></section>
-        <section class="event popup"></section>
-
-        <header><h2>{{data.applicationName}}</h2></header>
-        <div class="wrapper">
-            <aside class="organ-list">
-
-                <section class="organs">
-
-                    <div ng-repeat="organ in organs" ui-draggable="true" drag="{{organ}}" drag-channel="A"
-                         ng-show="organ.unused">
-                        <img class="organ-picture" ng-src="img/organ/{{organ.type}}.svg"
-                             alt="This picture loads on non-supporting browsers."/>
-                    </div>
-
-                </section>
-                <section class="campaign">
-                    <div class="campaign-progress"></div>
-                    <button class="start-campaign" ng-class="{'disabled': donationDisabled}" ng-click="startCampaign()" >Spendenkampagne starten</button>
-                </section>
-            </aside>
-
-            <main>
-                <section class="patients" ng-controller="RenderController">
-
-
-                    <div class="patient" drop-channel="A" ui-on-drop="onDrop(patient, $data)"
-                         ng-repeat="patient in patients" on-finish-render="done">
-
-                        <div ng-switch on="patient.status">
-                            <img ng-switch-when="alive" class="patient-picture"
-                                 ng-src="img/person-{{patient.type}}.svg"
-                                 alt="This picture loads on non-supporting browsers."/>
-                            <img ng-switch-when="saved" class="patient-picture" src="img/person-lebendig.svg"
-                                 alt="This picture loads on non-supporting browsers."/>
-                            <img ng-switch-when="dead" class="patient-picture" src="img/person-tot.svg"
-                                 alt="This picture loads on non-supporting browsers."/>
-                        </div>
-
-
-                        <div class="patient-status">
-                            <div>{{patient.organ}}</div>
-                            <div class="indicator patient-health">
-                                <div class="bar" style="width: {{patient.health}}%;"></div>
-                                <div class="text">{{patient.health}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="status"></section>
-            </main>
-            <aside class="result-content">
-
-                <div class="saved">
-                    <p class="counter">{{savedCounter}}</p>
-
-                    <p class="text">wurden gerettet</p>
-                </div>
-
-                <div class="dead">
-                    <p class="counter">{{deadCounter}}</p>
-
-                    <p class="text">sind leider gestorben</p>
-                </div>
-
-
-                <div class="ill">
-                    <p class="counter">{{illCounter}}</p>
-
-                    <p class="text">stehen derzeit auf der Warteliste</p>
-                </div>
-
-                <div class="day">
-                    <p class="counter">{{day}}.</p>
-
-                    <p class="text">Tag</p>
-                </div>
-            </aside>
+            <p>Die Grafik wurde bisher leider nur für Chrome optimiert.</p>
         </div>
 
-        <section class="loading"></section>
+        <div ng-hide="{{showFallback}}">
 
+
+            <section id="welcome" class="popup" ng-hide="started">
+                <div class="circle">
+                    <h1>The waiting list</h1>
+
+                    <h3>Bist du noch zu retten?</h3>
+
+                    <p>Niere, Lunge, Herz – rund 12.000 Menschen warten in diesem Moment auf ein neues Organ. Die Zahl
+                        der Spender ist dagegen so niedrig wie noch nie. <br/> <br/>
+
+                    Jetzt bist du am Zug: Kannst du die Patienten mit einer Transplantation retten?</p>
+
+                    <div id="startbtn" ng-click="startGame()"><img src="img/start.svg" alt=""/></div>
+
+                    <div>
+                        <img ng-repeat="organ in data.organs" ng-src="img/organ/{{organ}}.svg"
+                             class="{{organ}} start-organ"
+                             alt="This picture loads on non-supporting browsers."/>
+                    </div>
+                </div>
+
+                <p class="description">Ein Newsgame über das Organspenden <br/>von Sonja, Steffen, Lina, Gero und Hakan
+                </p>
+
+            </section>
+
+            <section class="results popup"></section>
+            <section class="event popup"></section>
+
+            <header><h2>{{data.applicationName}}</h2></header>
+            <div class="wrapper">
+                <aside class="organ-list">
+
+                    <section class="organs">
+
+                        <div ng-repeat="organ in organs" ui-draggable="true" drag="{{organ}}" drag-channel="A"
+                             ng-show="organ.unused">
+                            <img class="organ-picture" ng-src="img/organ/{{organ.type}}.svg"
+                                 alt="This picture loads on non-supporting browsers."/>
+                        </div>
+
+                    </section>
+                    <section class="campaign">
+                        <div class="campaign-progress"></div>
+                        <button class="start-campaign" ng-class="{'disabled': donationDisabled}"
+                                ng-click="startCampaign()">Spendenkampagne starten
+                        </button>
+                    </section>
+                </aside>
+
+                <main>
+                    <section class="patients" ng-controller="RenderController">
+
+
+                        <div class="patient" drop-channel="A" ui-on-drop="onDrop(patient, $data)"
+                             ng-repeat="patient in patients" on-finish-render="done">
+
+                            <div ng-switch on="patient.status">
+                                <img ng-switch-when="alive" class="patient-picture"
+                                     ng-src="img/person-{{patient.type}}.svg"
+                                     alt="This picture loads on non-supporting browsers."/>
+                                <img ng-switch-when="saved" class="patient-picture" src="img/person-lebendig.svg"
+                                     alt="This picture loads on non-supporting browsers."/>
+                                <img ng-switch-when="dead" class="patient-picture" src="img/person-tot.svg"
+                                     alt="This picture loads on non-supporting browsers."/>
+                            </div>
+
+
+                            <div class="patient-status">
+                                <div>{{patient.organ}}</div>
+                                <div class="indicator patient-health">
+                                    <div class="bar" style="width: {{patient.health}}%;"></div>
+                                    <div class="text">{{patient.health}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="status"></section>
+                </main>
+                <aside class="result-content">
+
+                    <div class="saved">
+                        <p class="counter">{{savedCounter}}</p>
+
+                        <p class="text">wurden gerettet</p>
+                    </div>
+
+                    <div class="dead">
+                        <p class="counter">{{deadCounter}}</p>
+
+                        <p class="text">sind leider gestorben</p>
+                    </div>
+
+
+                    <div class="ill">
+                        <p class="counter">{{illCounter}}</p>
+
+                        <p class="text">stehen derzeit auf der Warteliste</p>
+                    </div>
+
+                    <div class="day">
+                        <p class="counter">{{day}}.</p>
+
+                        <p class="text">Tag</p>
+                    </div>
+                </aside>
+            </div>
+
+            <section class="loading"></section>
+        </div>
     </body>
 
 </html>

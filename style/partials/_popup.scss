@@ -31,8 +31,16 @@
   background: #888;
 
   h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.4em;
+    font-size: 2em;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 1em;
+    line-height: 1.4em;
+    font-weight: 300;
+    margin-bottom: 1em;
   }
 
   p {
@@ -40,35 +48,37 @@
     line-height: 1.4em;
   }
 
-
   position: relative;
 }
 
-.start-organ{
+.start-organ {
   position: absolute;
-  width: 100px;
+  width: 80px;
 
-  &.heart{
+  &.kidney {
     top: 300px;
     left: -25px;
   }
-
-  &.liver{
-    top: 400px;
-    left: 40px;
+  &.liver {
+    top: 380px;
+    left: 16px
   }
 
-  &.lung{
-    top: 450px;
-    left: 150px;
+  &.lung {
+    top: 436px;
+    left: 83px;
+  }
+
+  &.heart {
+    top: 463px;
+    left: 170px;
   }
 }
 
-
-.description{
+.description {
   text-align: center;
   color: #888;
   font-size: 0.9em;
   line-height: 1.2em;
-  margin: 5em 0 0 0;
+  margin: 5em 0 2em;
 }
