@@ -1,32 +1,55 @@
-
 {
 
-	"applicationName": "Organspenden Newsgame",
+    "applicationName": "Organspenden Newsgame",
 
-    "organs": ["liver", "heart", "lung", "kidney"],
+    "organs": [
+        "liver",
+        "heart",
+        "lung",
+        "kidney"
+    ],
 
-	"donors": {
-		"liver": 2,
-		"heart": 4,
-		"lung": 1,
+    "donors": {
+        "liver": 2,
+        "heart": 4,
+        "lung": 1,
         "kidney": 3
-	},
+    },
 
-	"patients": {
-		"liver": 4,
-		"heart": 6,
-		"lung": 2,
+    "patients": {
+        "liver": 4,
+        "heart": 6,
+        "lung": 2,
         "kidney": 7
-	},
+    },
 
     "illPersons": 7654,
 
-	"minHealth" : 50,
-	"maxHealth": 100,
+    "minHealth": 50,
+    "maxHealth": 100,
 
-	"minSpeed": 182,
-	"maxSpeed": 365,
+    "minSpeed": 182,
+    "maxSpeed": 365,
 
-	"factor": 365
+    "factor": 365,
+
+    "level": [
+        ["kidney"],
+        [
+            "kidney",
+            "liver"
+        ],
+        [
+            "kidney",
+            "liver",
+            "lung"
+        ],
+        [
+            "kidney",
+            "liver",
+            "lung",
+            "heart"
+        ]
+    ]
 }
 
