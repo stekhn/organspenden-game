@@ -27,22 +27,48 @@
 
         $scope.startGame = function () {
 
+            disableCampaign($scope, $timeout);
             $scope.started = true;
             generatePatients($scope);
             generateOrgans($scope);
         };
 
+        $scope.startCampaign = function () {
+            if (!$scope.donationDisabled) {
+                generateOrgans($scope);
+                disableCampaign($scope, $timeout)
+            }
+        }
+
+        $scope.donationDisabled = true;
+
         $scope.savedCounter = 0;
         $scope.deadCounter = 0;
         $scope.illCounter = 0;
 
+        $scope.organs = [];
     }]);
+
+
+    function enableDonation($scope) {
+        console.log('-------##');
+        $scope.donationDisabled = false;
+    }
+
+    function disableCampaign($scope, $timeout) {
+        $scope.donationDisabled = true
+
+        $timeout(function () {
+            enableDonation($scope)
+        }, 5000)
+    }
+
 
     app.controller('RenderController', ['$scope', '$timeout', function ($scope, $timeout) {
 
         $scope.$on('done', function (ngRepeatFinishedEvent) {
 
-            $timeout(function(){
+            $timeout(function () {
                 healthCounter($scope);
             }, 1000)
 
@@ -80,8 +106,6 @@
 
     function generateOrgans($scope) {
 
-        $scope.organs = [];
-
         var counter = 0;
         for (var organ in $scope.data.donors) {
             for (var i = 0; i < $scope.data.donors[organ]; i++) {
@@ -98,7 +122,7 @@
 
     function healthCounter($scope) {
 
-        $.each($scope.patients, function(key, value) {
+        $.each($scope.patients, function (key, value) {
 
             var start = new Date();
             var maxTime = Math.floor(Math.random() * (($scope.data.maxSpeed - $scope.data.minSpeed) + $scope.data.minSpeed));
@@ -112,7 +136,7 @@
                     $scope.$apply();
                 }
 
-                if ($scope.patients[key].health <= 0 &&  $scope.patients[key].status === "alive") {
+                if ($scope.patients[key].health <= 0 && $scope.patients[key].status === "alive") {
                     console.log('dead');
                     $scope.patients[key].status = "dead";
                     $scope.$parent.deadCounter++;

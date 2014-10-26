@@ -61,7 +61,9 @@
                 </section>
                 <section class="campaign">
                     <div class="campaign-progress"></div>
-                    <button class="start-campaign">Spendenkampagne starten</button>
+                    <button class="start-campaign" ng-click="startCampaign()" >Spendenkampagne starten</button>
+                    <!--ng-disabled="{{donationDisabled}}"-->
+                    <p>{{donationDisabled}}</p>
                 </section>
             </aside>
 
