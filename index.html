@@ -21,7 +21,7 @@
 
     </head>
 
-    <body ng-controller="JsonLoaderCtrl">
+    <body ng-controller="MainCtrl">
 
         <section id="welcome" class="popup" ng-hide="started">
             <div class="circle">
@@ -113,6 +113,12 @@
                     <p class="counter">{{illCounter}}</p>
 
                     <p class="text">stehen derzeit auf der Warteliste</p>
+                </div>
+
+                <div class="day">
+                    <p class="counter">{{day}}.</p>
+
+                    <p class="text">Tag</p>
                 </div>
             </aside>
         </div>

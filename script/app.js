@@ -2,7 +2,7 @@
 
     var app = angular.module('app', ['ngDragDrop']);
 
-    app.controller('JsonLoaderCtrl', ['$scope', '$http', '$timeout', function ($scope, $http, $timeout) {
+    app.controller('MainCtrl', ['$scope', '$http', '$timeout', function ($scope, $http, $timeout) {
 
         $http.get('data/data.json').success(function (data) {
 
@@ -24,6 +24,7 @@
         };
 
         $scope.started = false;
+        $scope.day = 0;
 
         $scope.startGame = function () {
             $scope.level = 0;
@@ -31,6 +32,7 @@
             $scope.started = true;
             generatePatients($scope);
             generateOrgans($scope);
+            dayCounter($scope);
         };
 
         $scope.startCampaign = function () {
@@ -69,7 +71,7 @@
 
             $timeout(function () {
                 healthCounter($scope);
-            }, 1000)
+            }, 1000);
 
         });
     }]);
@@ -164,5 +166,17 @@
             }
         });
     }
+
+    function dayCounter($scope) {
+
+        if ($scope.started && !$scope.paused) {
+            setTimeout(function () {
+                $scope.day++;
+                $scope.$apply();
+                dayCounter($scope);
+            }, 1000);
+        }
+    }
+
 
 }());
