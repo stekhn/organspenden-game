@@ -1,17 +1,21 @@
 .wrapper {
-  display: flex;
-  flex-flow: row nowrap;
+//  display: flex;
+//  flex-flow: row nowrap;
   font-weight: 400;
   text-align: center;
   /* height: 100%; */
   position: absolute;
   top: 95px;
   bottom: 0px;
+  left: 0;
+  right: 0;
 }
 
 aside {
   width: 250px;
-  flex: 0 auto;
+  top: 0;
+  bottom: 0;
+
 }
 
 .organs {
@@ -25,14 +29,24 @@ aside {
 
 .organ-list {
   border-right: 1px solid #ccc;
+position: absolute;
+  left: 0;
 }
 
 .result-content {
   border-left: 1px solid #ccc;
+  position: absolute;
+  right: 0;
 }
 
 main {
-  flex: 3 0px;
+//  flex: 3 0px;
+  position: absolute;
+  left: 250px;
+  /* float: left; */
+  right: 250px;
+  overflow: auto;
+  background: #ffffff;
   overflow: auto;
   background: #ffffff;
 }

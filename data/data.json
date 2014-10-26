@@ -16,12 +16,27 @@
         "kidney": 3
     },
 
-    "patients": {
-        "liver": 4,
-        "heart": 6,
-        "lung": 2,
-        "kidney": 7
-    },
+    "patients": [
+        {
+            "kidney": 6
+        },
+        {
+            "kidney": 6,
+            "liver": 3
+        },
+        {
+            "kidney": 6,
+            "liver": 3,
+            "lung": 1
+        },
+        {
+            "kidney": 6,
+            "liver": 3,
+            "lung": 1,
+            "heart": 1
+        }
+    ],
+
 
     "illPersons": 7654,
 
